@@ -1,7 +1,7 @@
 <template>
 	<div id="home" class="home">
 		<section class="home__wrap" :style="{'background-image': 'url('+background+')'}">
-
+			
 		</section>
 	</div>
 </template>

@@ -14,6 +14,17 @@
 		margin:0;
 		padding:0;
 	}
+	.blind {
+		overflow:hidden;
+		position:absolute;
+		top:0;
+		left:0;
+		width:1px;
+		height:1px;
+		font-size:0;
+		line-height:0;
+		visibility:hidden;
+	}
 	#nav {
 		display:none
 	}
