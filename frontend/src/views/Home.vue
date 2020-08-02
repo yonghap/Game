@@ -1,9 +1,14 @@
 <template>
-	<div id="home" class="home">
-		<section class="home__wrap" :style="{'background-image': 'url('+background+')'}">
-			<h2 class="home__title">
-				CYBERPUNK 2077
-			</h2>
+	<div id="intro" class="intro">
+		<section class="home" :style="{'background-image': 'url('+background+')'}">
+			<div class="home__wrap">
+				<h2 class="home__title">
+					CYBERPUNK 2077
+				</h2>
+				<p class="home__desc">
+					싸이버펑크 2077
+				</p>
+			</div>
 		</section>
 	</div>
 </template>
@@ -19,11 +24,11 @@
 	}
 </script>
 <style lang="scss" scoped>
-	.home {
+	.intro {
 		width:100%;
 		height:100vh;
 	}
-	.home__wrap {
+	.home {
 		display:flex;
 		height:100%;
 		align-items:center;
@@ -31,8 +36,16 @@
 		background-repeat:no-repeat;
 		background-size:cover;
 		text-align:center;
-	}
-	.home__title {
-		width:100%
+		&__wrap {
+			width:100%;
+		}
+		&__title {
+			font-size:6rem;
+			color:#fff;
+		}
+		&__desc {
+			font-size:2rem;
+			color:#eee;
+		}
 	}
 </style>

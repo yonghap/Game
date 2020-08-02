@@ -10,9 +10,16 @@
 </template>
 
 <style lang="scss">
+	@import '@/styles/font.scss';
 	* {
 		margin:0;
 		padding:0;
+	}
+	body {
+		font-family:'NEXON Gothic';
+		font-size:16px;
+		color:#111;
+		line-height:1.43;
 	}
 	.blind {
 		overflow:hidden;
