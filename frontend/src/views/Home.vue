@@ -8,6 +8,10 @@
 				<p class="home__desc">
 					싸이버펑크 2077
 				</p>
+				<div class="home__btn">
+					<a href="#" class="btn">MORE</a>
+					<button type="button" class="btn">MORE</button>
+				</div>
 			</div>
 		</section>
 	</div>
