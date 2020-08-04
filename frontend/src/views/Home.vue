@@ -9,8 +9,9 @@
 					싸이버펑크 2077
 				</p>
 				<div class="home__btn">
-					<a href="#" class="btn">MORE</a>
-					<button type="button" class="btn">MORE</button>
+					<button type="button" class="btn">
+						<span class="btn__text">MORE</span>
+					</button>
 				</div>
 			</div>
 		</section>
@@ -50,6 +51,9 @@
 		&__desc {
 			font-size:2rem;
 			color:#eee;
+		}
+		&__btn {
+			margin-top:80px;
 		}
 	}
 </style>
