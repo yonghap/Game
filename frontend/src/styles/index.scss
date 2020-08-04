@@ -1,5 +1,6 @@
 @import './elements.scss';
 @import './variables.scss';
+@import './mixin.scss';
 @import './font.scss';
 
 * {
@@ -27,6 +28,18 @@ a {
 	line-height:0;
 	visibility:hidden;
 }
-#nav {
-	display:none
+
+//ELEMENTS
+// btns
+.btn {
+	display:inline-block;
+	background:red;
+	border:none;
+	font-size:1rem;
+	line-height:1.43;
+	outline:none;
+	@include transition;
+	&:hover {
+	
+	}
 }
