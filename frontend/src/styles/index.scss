@@ -34,14 +34,17 @@ a {
 .btn {
 	display:inline-block;
 	position:relative;
+	min-width:152px;
 	height:52px;
 	padding:0 32px;
 	border:none;
 	background:transparent;
 	font-size:1rem;
 	font-weight:600;
-	color:#444;
+	color:#fff;
 	line-height:1.43;
+	letter-spacing:.12rem;
+	box-sizing:border-box;
 	outline:none;
 	cursor:pointer;
 	&__text {
@@ -54,12 +57,15 @@ a {
 		left:0;
 		width:100%;
 		height:100%;
-		border-radius:5px;
-		background:#eee;
+		border-radius:4px;
+		background:$textColor;
 		@include transition;
 	}
 	&:hover:before {
-		opacity:.8;
-		transform:scale(1.1);
+		transform:scale(1.05);
+	}
+
+	&:active:before {
+		transform:scale(.98);
 	}
 }
