@@ -11,7 +11,7 @@ body {
 	font-family:'NEXON Gothic';
 	font-size:16px;
 	color:#111;
-	line-height:1.43;
+	line-height:1.62;
 }
 a {
 	color:inherit;
@@ -28,7 +28,13 @@ a {
 	line-height:0;
 	visibility:hidden;
 }
-
+.row {
+	max-width:1140px;
+	margin:0 auto;
+}
+.desc {
+	color:$textColor;
+}
 //ELEMENTS
 // btns
 .btn {
@@ -66,6 +72,6 @@ a {
 	}
 
 	&:active:before {
-		transform:scale(.98);
+		transform:scale(.99);
 	}
 }
