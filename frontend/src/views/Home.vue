@@ -37,6 +37,7 @@
 		display:flex;
 		height:100%;
 		align-items:center;
+		justify-content:center;
 		background-position:center top;
 		background-repeat:no-repeat;
 		background-size:cover;

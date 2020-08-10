@@ -11,11 +11,17 @@ body {
 	font-family:'NEXON Gothic';
 	font-size:16px;
 	color:#111;
-	line-height:1.62;
+	line-height:1.43;
 }
 a {
 	color:inherit;
 	text-decoration:none;
+}
+img {
+	max-width:100%;
+}
+ul,li,ol {
+	list-style:none;
 }
 .blind {
 	overflow:hidden;
@@ -34,6 +40,7 @@ a {
 }
 .desc {
 	color:$textColor;
+	line-height:1.8;
 }
 //ELEMENTS
 // btns
