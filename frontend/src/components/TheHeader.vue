@@ -18,7 +18,7 @@
 		background:#171A21;
 		&__row {
 			display:flex;
-			max-width:1140px;
+			max-width:960px;
 			margin:0 auto;
 			padding:20px;
 			justify-content:space-between;
@@ -34,8 +34,12 @@
 		}
 	}
 	.nav {
-		align-items:center;
+		height:54px;
+		align-self:center;
+		line-height:54px;
 		a {
+			display:inline-block;
+			margin-left:20px;
 			color:#fff;
 		}
 	}

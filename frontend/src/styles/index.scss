@@ -8,6 +8,9 @@
 	padding:0;
 }
 body {
+	min-height:100%;
+	background:url('~@/assets/images/bg.png');
+	background-size:cover;
 	font-family:'NEXON Gothic';
 	font-size:16px;
 	color:#111;
@@ -42,6 +45,19 @@ ul,li,ol {
 .desc {
 	color:$textColor;
 	line-height:1.8;
+}
+.bg {
+
+}
+.content {
+	position:relative;
+	max-width:960px;
+	margin:0 auto;
+	padding:0 190px;
+	&__wrap {
+		padding:40px;
+		background:rgba(0,0,0,.2);
+	}
 }
 //ELEMENTS
 // btns

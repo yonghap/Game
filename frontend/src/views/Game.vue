@@ -85,7 +85,6 @@
 	.game {
 		&__detail {
 			padding:50px 0;
-			background:url('~@/assets/images/bg.png');
 		}
 		&__wrap {
 			padding:40px;
