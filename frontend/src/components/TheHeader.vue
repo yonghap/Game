@@ -14,6 +14,7 @@
 	</header>
 </template>
 <style lang="scss" scoped>
+	@import '@/styles/variables.scss';
 	.header {
 		background:#171A21;
 		&__row {
@@ -40,7 +41,10 @@
 		a {
 			display:inline-block;
 			margin-left:20px;
-			color:#fff;
+			color:$titleColor;
+			&:hover {
+				color:$highlightColor;
+			}
 		}
 	}
 </style>

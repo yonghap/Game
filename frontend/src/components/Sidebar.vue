@@ -23,23 +23,28 @@
 </template>
 
 <style lang="scss" scoped>
+	@import '@/styles/variables.scss';
 	.sidebar {
 		position:absolute;
 		top:0;
 		left:0;
 		&__item {
-			margin-bottom:20px;
+			margin-bottom:30px;
 		}
 		&__title {
+			margin-bottom:5px;
 			font-size:1.25rem;
-			font-weight:600;
-			color:#66C0F4;
+			font-weight:400;
+			color:$titleColor;
 		}
 		a {
 			padding:0 15px;
 			font-size:1.01rem;
-			color:#66C0F4;
+			color:$textColor;
 			line-height:1.8;
+			&:hover {
+				color:$highlightColor;
+			}
 		}
 	}
 </style>
