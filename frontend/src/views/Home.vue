@@ -19,8 +19,14 @@
 </template>
 
 <script>
+	import { mapGetters } from 'vuex'
 	export default {
 		name: 'Home',
+		computed : {
+			...mapGetters([
+				'sidebar'
+			])
+		},
 		data() {
 			return {
 				background : require('@/assets/images/game1.jpg')
