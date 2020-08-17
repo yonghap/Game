@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<div id="nav">
+		<div id="nav" class="nav">
 			<router-link to="/home">Home</router-link>
 			|
 			<router-link to="/game">Game</router-link>
@@ -11,5 +11,9 @@
 </template>
 
 <style lang="scss">
-
+	.nav {
+		a {
+			color:#fff;
+		}
+	}
 </style>
