@@ -10,7 +10,8 @@
 				</p>
 				<div class="home__btn">
 					<button type="button" class="btn">
-						<span class="btn__text">MORE</span>
+						<span class="btn__text">MORE
+						{{ sidebar }}</span>
 					</button>
 				</div>
 			</div>
@@ -22,15 +23,14 @@
 	import { mapGetters } from 'vuex'
 	export default {
 		name: 'Home',
-		computed : {
-			...mapGetters([
-				'sidebar'
-			])
-		},
+
 		data() {
 			return {
 				background : require('@/assets/images/game1.jpg')
 			}
+		},
+		created() {
+			this.$store.dispatch('getGame');
 		}
 	}
 </script>

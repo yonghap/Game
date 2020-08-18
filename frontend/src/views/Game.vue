@@ -79,6 +79,7 @@
 		padding-top:22%;
 		padding-bottom:1.6%;
 		background-position:50% 50%;
+		background-size:cover;
 		font-size:3.8rem;
 		color:#fff;
 	}
@@ -114,7 +115,7 @@
 	.info {
 		color:$titleColor;
 		&__image {
-			margin-bottom:5px;
+			margin-bottom:10px;
 		}
 		&__list {
 			display:flex;
