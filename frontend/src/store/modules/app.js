@@ -2,7 +2,6 @@ import axios from "axios";
 
 const state = {
 	sidebar : '1',
-	test : '2',
 	game : null
 }
 
@@ -17,7 +16,7 @@ const actions = {
 		return new Promise((resolve, reject) => {
 			axios.get('http://dummy.restapiexample.com/api/v1/employees')
 				.then((res) => {
-					commit('SET_GAME', res);
+					commit('SET_GAME', res.data.data);
 					resolve();
 				}).catch(error => {
 				reject(error);
