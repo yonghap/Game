@@ -7,8 +7,8 @@
 				</a>
 			</h1>
 			<nav id="nav" class="nav">
-				<a href="#">소개</a>
-				<a href="#">둘러보기</a>
+				<router-link to="/about">소개</router-link>
+				<router-link to="/search">둘러보기</router-link>
 			</nav>
 		</div>
 	</header>

@@ -1,6 +1,8 @@
 <template>
 	<div>
-		<router-view :key="key"/>
+		<transition name="fade-transform" mode="out-in">
+			<router-view :key="key"/>
+		</transition>
 	</div>
 </template>
 
@@ -14,3 +16,7 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+
+</style>

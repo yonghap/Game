@@ -9,15 +9,7 @@ import Layout from '@/layout'
 const routes = [
 	{
 		path: '/',
-		component : Layout,
-		redirect : '/home',
-		// component: () => import('@/views/Home'),
-		children : [
-			{
-				path : 'home',
-				component: () => import('@/views/Home')
-			}
-		]
+		component: () => import('@/views/Home')
 	},
 	{
 		path: '/about',
