@@ -7,6 +7,7 @@
 	padding:0;
 }
 body {
+	overflow-x:hidden;
 	min-height:100vh;
 	background:url('~@/assets/images/bg.png');
 	background-size:cover;
@@ -45,10 +46,10 @@ ul,li,ol {
 	color:$textColor;
 	line-height:1.8;
 }
-.bg {
-
+.inner {
+	padding:50px;
 }
-.content {
+.box {
 	position:relative;
 	max-width:960px;
 	margin:0 auto;

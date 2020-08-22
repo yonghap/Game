@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="wrap" class="wrap">
 		<app-main/>
 	</div>
 </template>

@@ -23,13 +23,7 @@ const routes = [
 	},
 	{
 		path: '/game',
-		component : Layout,
-		children : [
-			{
-				path : '/',
-				component: () => import('@/views/Game')
-			}
-		]
+		component: () => import('@/views/Game')
 	},
 	{
 		path: '/search',

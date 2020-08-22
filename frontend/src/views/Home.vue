@@ -1,14 +1,14 @@
 <template>
-	<div id="intro" class="intro">
-		<section class="home" :style="{'background-image': 'url('+background+')'}">
-			<div class="home__wrap">
-				<h2 class="home__title">
+	<div id="home" class="home">
+		<section class="intro" :style="{'background-image': 'url('+background+')'}">
+			<div class="intro__wrap">
+				<h2 class="intro__title">
 					CYBERPUNK 2077
 				</h2>
-				<p class="home__desc">
+				<p class="intro__desc">
 					싸이버펑크 2077
 				</p>
-				<div class="home__btn">
+				<div class="intro__btn">
 					<button type="button" class="btn">
 						<span class="btn__text">MORE</span>
 					</button>
@@ -32,11 +32,11 @@
 	}
 </script>
 <style lang="scss" scoped>
-	.intro {
+	.home {
 		width:100%;
 		height:100vh;
 	}
-	.home {
+	.intro {
 		display:flex;
 		height:100%;
 		align-items:center;

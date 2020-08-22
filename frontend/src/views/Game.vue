@@ -6,9 +6,9 @@
 					THE LAST OF US PART Ⅱ
 				</div>
 			</h2>
-			<div class="game__detail bg">
+			<div class="inner">
 				<div class="row">
-					<div class="game__wrap">
+					<section class="game__wrap">
 						<article class="meta">
 							<div class="meta__content">
 								<img src="@/assets/images/game3.jpg">
@@ -51,7 +51,7 @@
 								</li>
 							</ul>
 						</article>
-					</div>
+					</section>
 				</div>
 			</div>
 		</section>

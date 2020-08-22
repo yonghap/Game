@@ -1,10 +1,9 @@
 <template>
-	<div id="cateogory" class="category">
-		<TheHeader></TheHeader>
-		<section class="search bg">
-			<div class="content">
+	<div id="content" class="content">
+		<div class="inner">
+			<div class="box">
 				<Sidebar></Sidebar>
-				<div class="content__wrap">
+				<section class="box__wrap">
 					<article class="article">
 						<div class="article__tag">
 							<Tag></Tag>
@@ -247,20 +246,18 @@
 							</a>
 						</div>
 					</article>
-				</div>
+				</section>
 			</div>
-		</section>
+		</div>
 	</div>
 </template>
 
 <script>
-	import TheHeader from '@/components/TheHeader';
 	import Sidebar from '@/components/Sidebar';
 	import Tag from '@/components/Tag';
 
 	export default {
 		components: {
-			TheHeader,
 			Sidebar,
 			Tag
 		},
@@ -271,8 +268,3 @@
 		}
 	}
 </script>
-<style lang="scss" scoped>
-	.search {
-		padding:50px 0;
-	}
-</style>

@@ -1,25 +1,18 @@
 <template>
-	<div id="about" class="about">
-		<TheHeader></TheHeader>
-		<section class="search bg">
-			<div class="content">
-				<div class="content__wrap">
-					<article class="article desc">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quaerat suscipit voluptatibus. Asperiores dicta ea eius enim, fugiat iste maxime minima molestiae non officia quae quibusdam ratione, reprehenderit, sapiente vel.
-					</article>
-				</div>
+	<div id="content" class="content">
+		<div class="inner">
+			<div class="box">
+				<section class="box__wrap desc">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam atque dicta ea earum eligendi et fuga, fugit harum modi natus necessitatibus nobis odit quo sed sint tempore ullam unde.
+
+				</section>
 			</div>
-		</section>
+		</div>
 	</div>
 </template>
 
 <script>
-	import TheHeader from '@/components/TheHeader';
-
 	export default {
-		components: {
-			TheHeader
-		},
 		name: 'About',
 		data() {
 			return {
