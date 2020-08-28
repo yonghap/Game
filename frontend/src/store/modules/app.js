@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const state = {
-	sidebar : '1',
 	game : null
 }
 
@@ -14,9 +13,9 @@ const mutations = {
 const actions = {
 	getGame({commit}) {
 		return new Promise((resolve, reject) => {
-			axios.get('http://dummy.restapiexample.com/api/v1/employees')
+			axios.get('https://jsonplaceholder.typicode.com/posts')
 				.then((res) => {
-					commit('SET_GAME', res.data.data);
+					commit('SET_GAME', res.data);
 					resolve();
 				}).catch(error => {
 				reject(error);
