@@ -15,7 +15,7 @@ const actions = {
 		return new Promise((resolve, reject) => {
 			axios.get('https://jsonplaceholder.typicode.com/posts')
 				.then((res) => {
-					commit('SET_GAME', res.data);
+					// commit('SET_GAME', res.data);
 					resolve();
 				}).catch(error => {
 				reject(error);
