@@ -1,12 +1,12 @@
 <template>
 	<div id="home" class="home">
-		<section class="intro" :style="{'background-image': 'url('+background+')'}">
+		<section class="intro" :style="{'background-image': 'url('+intro.background_image+')'}">
 			<div class="intro__wrap">
 				<h2 class="intro__title">
-					CYBERPUNK 2077
+					{{ intro.name }}
 				</h2>
 				<p class="intro__desc">
-					싸이버펑크 2077
+					{{ intro.metacritic }} / 100
 				</p>
 				<div class="intro__btn">
 					<button type="button" class="btn">
@@ -23,11 +23,21 @@
 		name: 'Home',
 		data() {
 			return {
+				intro : null,
 				background : require('@/assets/images/game1.jpg')
 			}
 		},
 		created() {
-			this.$store.dispatch('getGame');
+
+			this.$store.dispatch('getIntroGame')
+			.then(() => {
+				//
+				this.intro = this.$store.getters.game.results[Math.floor(Math.random() * this.$store.getters.game.results.length)];
+
+			})
+		},
+		mounted() {
+
 		}
 	}
 </script>

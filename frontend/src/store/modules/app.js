@@ -11,11 +11,11 @@ const mutations = {
 }
 
 const actions = {
-	getGame({commit}) {
+	getIntroGame({commit}) {
 		return new Promise((resolve, reject) => {
-			axios.get('https://jsonplaceholder.typicode.com/posts')
+			axios.get('https://api.rawg.io/api/games')
 				.then((res) => {
-					// commit('SET_GAME', res.data);
+					commit('SET_GAME', res.data);
 					resolve();
 				}).catch(error => {
 				reject(error);
