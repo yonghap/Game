@@ -1,4 +1,4 @@
 const getters = {
-	game : state => state.app.game
+	game : state => state.app.introGame
 }
 export default getters 

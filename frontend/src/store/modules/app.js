@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const state = {
-	game : null
+	introGame : null
 }
 
 const mutations = {
 	SET_GAME(state, game) {
-		state.game = game;
+		state.introGame = game;
 	},
 }
 
@@ -22,6 +22,17 @@ const actions = {
 			})
 		})
 	}
+	// getSearchGame({commit}) {
+	// 	return new Promise((resolve, reject) => {
+	// 		axios.get('https://api.rawg.io/api/games?ordering=released')
+	// 			.then((res) => {
+	// 				commit('SET_GAME', res.data);
+	// 				resolve();
+	// 			}).catch(error => {
+	// 			reject(error);
+	// 		})
+	// 	})
+	// }
 }
 
 export default {
