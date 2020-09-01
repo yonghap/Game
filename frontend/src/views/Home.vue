@@ -5,9 +5,9 @@
 				<h2 class="intro__title">
 					{{ intro.name }}
 				</h2>
-				<p class="intro__desc">
-					{{ intro.metacritic }} / 100
-				</p>
+				<div class="intro__metacritic">
+					{{ intro.metacritic }}
+				</div>
 				<div class="intro__btn">
 					<button type="button" class="btn">
 						<span class="btn__text">MORE</span>
@@ -59,11 +59,19 @@
 			width:100%;
 		}
 		&__title {
+			margin-bottom:20px;
 			font-size:6rem;
 			color:#fff;
+			text-shadow:5px 5px 10px #666;
 		}
-		&__desc {
-			font-size:2rem;
+		&__metacritic {
+			width:70px;
+			height:70px;
+			margin:0 auto;
+			border-radius:5px;
+			background:#6c3;
+			font-size:1.6rem;
+			line-height:70px;
 			color:#eee;
 		}
 		&__btn {
