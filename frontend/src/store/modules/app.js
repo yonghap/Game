@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const state = {
-	introGame : null
+	introGame : null,
+	categoryGame : null
 }
 
 const mutations = {

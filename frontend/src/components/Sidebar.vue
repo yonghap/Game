@@ -3,10 +3,10 @@
 		<div class="sidebar__item">
 			<h3 class="sidebar__title">게임</h3>
 			<ul class="sidebar__list">
-				<li><a href="#">인기 제품</a></li>
-				<li><a href="#">신규 출시</a></li>
-				<li><a href="#">발매 예정</a></li>
-				<li><a href="#">최근 업데이트</a></li>
+				<li><button type="button" @click="getCategory('rating')">인기 제품</button></li>
+				<li><button type="button" @click="getCategory('new')">신규 출시</button></li>
+				<li><button type="button" @click="getCategory('soon')">발매 예정</button></li>
+				<li><button type="button" @click="getCategory('update')">최근 업데이트</button></li>
 			</ul>
 		</div>
 		<div class="sidever__item">
@@ -21,6 +21,16 @@
 		</div>
 	</nav>
 </template>
+
+<script>
+	export default {
+		methods : {
+			getCategory(type) {
+				console.log(type);
+			}
+		}
+	}
+</script>
 
 <style lang="scss" scoped>
 	@import '@/styles/variables.scss';
@@ -37,8 +47,11 @@
 			font-weight:400;
 			color:$titleColor;
 		}
-		a {
+		a, button {
 			padding:0 15px;
+			border:none;
+			outline:none;
+			font-family:'NEXON Gothic';
 			font-size:1.01rem;
 			color:$textColor;
 			line-height:1.8;
