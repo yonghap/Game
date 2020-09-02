@@ -4,9 +4,7 @@
 			<h3 class="sidebar__title">게임</h3>
 			<ul class="sidebar__list">
 				<li><button type="button" @click="getCategory('rating')">인기 제품</button></li>
-				<li><button type="button" @click="getCategory('new')">신규 출시</button></li>
-				<li><button type="button" @click="getCategory('soon')">발매 예정</button></li>
-				<li><button type="button" @click="getCategory('update')">최근 업데이트</button></li>
+				<li><button type="button" @click="getCategory('created')">신규 출시</button></li>
 			</ul>
 		</div>
 		<div class="sidever__item">
@@ -24,9 +22,14 @@
 
 <script>
 	export default {
+		created() {
+
+		},
 		methods : {
 			getCategory(type) {
-				console.log(type);
+				this.$store.dispatch('getSearchGame',{
+					ordering : type
+				})
 			}
 		}
 	}

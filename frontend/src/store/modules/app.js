@@ -28,9 +28,8 @@ const actions = {
 	},
 	getSearchGame({commit},type) {
 		return new Promise((resolve, reject) => {
-			axios.get('https://api.rawg.io/api/games?ordering='+type)
+			axios.get('https://api.rawg.io/api/games?ordering='+type.ordering)
 				.then((res) => {
-					console.log(type);
 					commit('SET_CATEGORYGAME', res.data);
 					resolve();
 				}).catch(error => {

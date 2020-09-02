@@ -86,6 +86,7 @@ button {
 	flex-wrap:wrap;
 	li {
 		flex-basis:25%;
+		flex-shrink:1;
 		margin-bottom:20px;
 		padding:0 10px;
 		box-sizing:border-box;
@@ -96,12 +97,13 @@ button {
 	&__image {
 		position:relative;
 		padding-top:56.25%;
-		background-repeate:no-repeat;
+		background-repeat:no-repeat;
 		background-size:cover;
 	}
 	&__title {
 		padding:10px 0;
 		color:$textColor;
+		word-break:break-all;
 	}
 }
 .more {

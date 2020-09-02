@@ -28,11 +28,8 @@
 			}
 		},
 		created() {
-			this.$store.dispatch('getIntroGame',{
-				type : 'name'
-			})
+			this.$store.dispatch('getIntroGame')
 			.then(() => {
-				//
 				this.intro = this.$store.getters.introGame.results[Math.floor(Math.random() * this.$store.getters.introGame.results.length)];
 
 			})

@@ -45,7 +45,9 @@
 			}
 		},
 		created() {
-			this.$store.dispatch('getSearchGame')
+			this.$store.dispatch('getSearchGame',{
+				ordering : 'name'
+			})
 			.then(() => {
 				this.games = this.$store.getters.categoryGame.results;
 			})
