@@ -45,9 +45,9 @@
 			}
 		},
 		created() {
-			this.$http.get('https://api.rawg.io/api/games?dates=2020-01-01,2020-12-31&ordering=-rating')
-			.then(res => {
-				this.games = res.data.results;
+			this.$store.dispatch('getSearchGame')
+			.then(() => {
+				this.games = this.$store.getters.categoryGame.results;
 			})
 		}
 	}

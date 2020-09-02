@@ -28,11 +28,12 @@
 			}
 		},
 		created() {
-
-			this.$store.dispatch('getIntroGame')
+			this.$store.dispatch('getIntroGame',{
+				type : 'name'
+			})
 			.then(() => {
 				//
-				this.intro = this.$store.getters.game.results[Math.floor(Math.random() * this.$store.getters.game.results.length)];
+				this.intro = this.$store.getters.introGame.results[Math.floor(Math.random() * this.$store.getters.introGame.results.length)];
 
 			})
 		},
