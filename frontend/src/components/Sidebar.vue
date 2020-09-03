@@ -3,7 +3,7 @@
 		<div class="sidebar__item">
 			<h3 class="sidebar__title">게임</h3>
 			<ul class="sidebar__list">
-				<li><button type="button" @click="getCategory('rating')">인기 제품</button></li>
+				<li><button type="button" @click="getCategory('-rating')">인기 제품</button></li>
 				<li><button type="button" @click="getCategory('created')">신규 출시</button></li>
 			</ul>
 		</div>
@@ -22,14 +22,18 @@
 
 <script>
 	export default {
-		created() {
-
+		data() {
+			return {
+				type : '-rating'
+			}
+		},
+		mounted() {
+			this.getCategory(this.type);
 		},
 		methods : {
 			getCategory(type) {
-				this.$store.dispatch('getSearchGame',{
-					ordering : type
-				})
+				this.type = type;
+				this.$emit('getCategory',this.type)
 			}
 		}
 	}
@@ -58,6 +62,7 @@
 			font-size:1.01rem;
 			color:$textColor;
 			line-height:1.8;
+			cursor:pointer;
 			&:hover {
 				color:$highlightColor;
 			}

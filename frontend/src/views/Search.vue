@@ -2,7 +2,9 @@
 	<div id="content" class="content">
 		<div class="inner">
 			<div class="box">
-				<Sidebar></Sidebar>
+				<Sidebar
+					v-on:getCategory="getCategory"
+				></Sidebar>
 				<section class="box__wrap">
 					<article class="article">
 						<h2 class="article__title">인기 게임</h2>
@@ -33,7 +35,7 @@
 	import Sidebar from '@/components/Sidebar';
 	import Tag from '@/components/Tag';
 
-	export default {
+		export default {
 		components: {
 			Sidebar,
 			Tag
@@ -45,12 +47,17 @@
 			}
 		},
 		created() {
-			this.$store.dispatch('getSearchGame',{
-				ordering : 'name'
-			})
-			.then(() => {
-				this.games = this.$store.getters.categoryGame.results;
-			})
+
+		},
+		methods : {
+			getCategory(type) {
+				this.$store.dispatch('getSearchGame',{
+					ordering : type
+				})
+				.then(() => {
+					this.games = this.$store.getters.categoryGame.results;
+				})
+			}
 		}
 	}
 </script>
