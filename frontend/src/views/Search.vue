@@ -12,7 +12,7 @@
 									<span class="list__image" :style="{'background-image': 'url('+item.background_image+')'}">
 									</span>
 									<span class="list__title">
-										{{ item.name }}
+										{{ item.name   }}
 									</span>
 								</a>
 							</li>
