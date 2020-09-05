@@ -7,7 +7,9 @@
 				></Sidebar>
 				<section class="box__wrap">
 					<article class="article">
-						<h2 class="article__title">인기 게임</h2>
+						<h2 class="article__title">
+							{{ title }}
+						</h2>
 						<ul class="list">
 							<li v-for="item in games">
 								<a href="#">
@@ -43,18 +45,30 @@
 		name: 'Search',
 		data() {
 			return {
-				games : null
+				games : null,
+				title : ''
 			}
 		},
 		created() {
 
 		},
 		methods : {
+			setCategoryTitle(type) {
+				switch (type) {
+					case '-rating' :
+						this.title = '인기 게임';
+						break;
+					case 'created' :
+						this.title = '신규 출시';
+						break;
+				}
+			},
 			getCategory(type) {
 				this.$store.dispatch('getSearchGame',{
 					ordering : type
 				})
 				.then(() => {
+					this.setCategoryTitle(type);
 					this.games = this.$store.getters.categoryGame.results;
 				})
 			}
