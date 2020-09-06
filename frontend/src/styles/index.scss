@@ -93,6 +93,14 @@ button {
 		span {
 			display:block;
 		}
+		a {
+			display:block;
+			&:hover {
+				.list__title {
+					color:$highlightColor;
+				}
+			}
+		}
 	}
 	&__image {
 		position:relative;
