@@ -28,7 +28,7 @@
 			}
 		},
 		created() {
-			this.$http.get('https://api.steampowered.com/ISteamApps/GetAppList/v2/')
+			this.$http.get('https://api.steampowered.com/ISteamApps/GetAppList/v2/ ')
 			.then((res) => {
 				console.log(res);
 			})

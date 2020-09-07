@@ -9,5 +9,6 @@ module.exports = {
 			}
 		}
 	},
-	outputDir: '../backend/public'
+	outputDir: '../',
+	publicPath : './'
 }
