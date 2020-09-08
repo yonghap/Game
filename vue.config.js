@@ -9,6 +9,6 @@ module.exports = {
 			}
 		}
 	},
-	outputDir: '../public',
+	outputDir: './public',
 	publicPath : './'
 }
