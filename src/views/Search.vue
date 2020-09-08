@@ -64,12 +64,14 @@
 				}
 			},
 			getCategory(type) {
+				this.$store.commit('SET_LOADING');
 				this.$store.dispatch('getSearchGame',{
 					ordering : type
 				})
 				.then(() => {
 					this.setCategoryTitle(type);
 					this.games = this.$store.getters.categoryGame.results;
+					this.$store.commit('SET_LOADING');
 				})
 			}
 		}

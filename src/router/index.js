@@ -22,7 +22,7 @@ const routes = [
 		]
 	},
 	{
-		path: '/game',
+		path: '/detail',
 		component: () => import('@/views/Game')
 	},
 	{

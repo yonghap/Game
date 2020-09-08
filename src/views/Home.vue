@@ -28,19 +28,12 @@
 			}
 		},
 		created() {
-			this.$http.get('https://api.steampowered.com/ISteamApps/GetAppList/v2/ ')
-			.then((res) => {
-				console.log(res);
+			this.$store.commit('SET_LOADING');
+			this.$store.dispatch('getIntroGame')
+			.then(() => {
+				this.intro = this.$store.getters.introGame.results[Math.floor(Math.random() * this.$store.getters.introGame.results.length)];
+				this.$store.commit('SET_LOADING');
 			})
-			// this.$store.dispatch('getIntroGame')
-			// .then(() => {
-			// 	this.intro = this.$store.getters.introGame.results[Math.floor(Math.random() * this.$store.getters.introGame.results.length)];
-			//
-			// })
-			// this.axios.get('https://api.steampowered.com/ISteamApps/GetAppList/v2/')
-			// .then((res) => {
-			// 	console.log(res);
-			// })
 		},
 		mounted() {
 

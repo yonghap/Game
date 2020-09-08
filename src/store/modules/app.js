@@ -1,11 +1,15 @@
-
+import axios from "axios"
 
 const state = {
 	introGame : null,
-	categoryGame : null
+	categoryGame : null,
+	isLoading : false
 }
 
 const mutations = {
+	SET_LOADING(state) {
+		state.isLoading = !state.isLoading;
+	},
 	SET_INTROGAME(state, game) {
 		state.introGame = game;
 	},
@@ -28,7 +32,7 @@ const actions = {
 	},
 	getSearchGame({commit},type) {
 		return new Promise((resolve, reject) => {
-			axios.get('https://api.rawg.io/api/games?dates=2020-01-01,2020-12-31&&ordering='+type.ordering)
+			      axios.get('https://api.rawg.io/api/games?dates=2020-01-01,2020-12-31&&ordering='+type.ordering)
 				.then((res) => {
 					commit('SET_CATEGORYGAME', res.data);
 					resolve();
