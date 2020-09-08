@@ -7,8 +7,29 @@
 			<router-link to="/search">Search</router-link>
 		</div>
 		<router-view/>
+		<Loading v-if="isLoading"></Loading>
 	</div>
 </template>
+
+<script>
+	import Loading from './components/Loading'
+
+	export default {
+		components : {
+			Loading
+		},
+		data() {
+			return {
+
+			}
+		},
+		computed : {
+			isLoading() {
+				return this.$store.getters.isLoading;
+			}
+		}
+	}
+</script>
 
 <style lang="scss">
 	.nav {
