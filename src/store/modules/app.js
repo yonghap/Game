@@ -32,7 +32,8 @@ const actions = {
 	},
 	getSearchGame({commit},type) {
 		return new Promise((resolve, reject) => {
-			      axios.get('https://api.rawg.io/api/games?dates=2020-01-01,2020-12-31&&ordering='+type.ordering)
+				type.ordering = type.ordering == 'date' ? '&dates=2020-08-01,2020-09-01' : '';
+		        axios.get('https://api.rawg.io/api/games?ordering=null' + type.ordering)
 				.then((res) => {
 					commit('SET_CATEGORYGAME', res.data);
 					resolve();

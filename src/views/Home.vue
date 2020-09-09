@@ -28,20 +28,20 @@
 			}
 		},
 		created() {
-			this.$http.get('http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=CD279D63142FD4882FC26DD06308289D&format=json',{
-				headers: {
-					'Access-Control-Allow-Origin' : '*'
-				}
-			})
-			.then(res=> {
-				console.log(res);
-			})
-			// this.$store.commit('SET_LOADING');
-			// this.$store.dispatch('getIntroGame')
-			// .then(() => {
-			// 	this.intro = this.$store.getters.introGame.results[Math.floor(Math.random() * this.$store.getters.introGame.results.length)];
-			// 	this.$store.commit('SET_LOADING');
+			// this.$http.get('http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=CD279D63142FD4882FC26DD06308289D&format=json',{
+			// 	headers: {
+			// 		'Access-Control-Allow-Origin' : '*'
+			// 	}
 			// })
+			// .then(res=> {
+			// 	console.log(res);
+			// })
+			this.$store.commit('SET_LOADING');
+			this.$store.dispatch('getIntroGame')
+			.then(() => {
+				this.intro = this.$store.getters.introGame.results[Math.floor(Math.random() * this.$store.getters.introGame.results.length)];
+				this.$store.commit('SET_LOADING');
+			})
 		},
 		mounted() {
 

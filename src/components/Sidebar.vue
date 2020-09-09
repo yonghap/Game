@@ -3,8 +3,8 @@
 		<div class="sidebar__item">
 			<h3 class="sidebar__title">게임</h3>
 			<ul class="sidebar__list">
-				<li v-bind:class="{ 'active' : type == '-rating'}"><button type="button" @click="getCategory('-rating')">인기 제품</button></li>
-				<li v-bind:class="{ 'active' : type == 'created'}"><button type="button" @click="getCategory('created')">신규 출시</button></li>
+				<li v-bind:class="{ 'active' : type == 'default'}"><button type="button" @click="getCategory('default')">인기 제품</button></li>
+				<li v-bind:class="{ 'active' : type == 'date'}"><button type="button" @click="getCategory('date')">신규 출시</button></li>
 			</ul>
 		</div>
 		<div class="sidever__item">
@@ -24,7 +24,7 @@
 	export default {
 		data() {
 			return {
-				type : '-rating'
+				type : 'default'
 			}
 		},
 		mounted() {

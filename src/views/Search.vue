@@ -13,7 +13,7 @@
 						<ul class="list">
 							<li v-for="item in games">
 								<a :href="'detail/'+item.id">
-									<span class="list__image" :style="{'background-image': 'url('+item.background_image+')'}">
+									<span class="list__image" :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}">
 									</span>
 									<span class="list__title">
 										{{ item.name   }}
@@ -46,19 +46,24 @@
 		data() {
 			return {
 				games : null,
-				title : ''
+				title : '',
+				cropText : 'crop/600/400'
 			}
 		},
 		created() {
-
 		},
 		methods : {
+			getCropImage(addr) {
+				let first = addr.substring(0,28);
+				let end = addr.substring(27,addr.length);
+				return first + this.cropText + end;
+			},
 			setCategoryTitle(type) {
 				switch (type) {
-					case '-rating' :
+					case 'default' :
 						this.title = '인기 게임';
 						break;
-					case 'created' :
+					case 'date' :
 						this.title = '신규 출시';
 						break;
 				}
