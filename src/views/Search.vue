@@ -12,7 +12,7 @@
 						</h2>
 						<ul class="list">
 							<li v-for="item in games">
-								<a href="#">
+								<a :href="'detail/'+item.id">
 									<span class="list__image" :style="{'background-image': 'url('+item.background_image+')'}">
 									</span>
 									<span class="list__title">

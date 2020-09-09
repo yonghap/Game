@@ -22,7 +22,7 @@ const routes = [
 		]
 	},
 	{
-		path: '/detail',
+		path: '/detail/:id',
 		component: () => import('@/views/Game')
 	},
 	{

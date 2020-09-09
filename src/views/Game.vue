@@ -1,9 +1,9 @@
 <template>
 	<div id="detail" class="detail">
 		<section class="game">
-			<h2 class="title" :style="{'background-image': 'url('+background+')'}">
+			<h2 class="title" :style="{'background-image': 'url('+game.background_image+')'}">
 				<div class="row">
-					THE LAST OF US PART Ⅱ
+					{{ game.name }}
 				</div>
 			</h2>
 			<div class="inner">
@@ -11,18 +11,19 @@
 					<section class="game__wrap">
 						<article class="meta">
 							<div class="meta__content">
-								<img src="@/assets/images/game3.jpg">
+								<video :src="game.clip.clip" controls v-if="game.clip"></video>
+								<img :src="game.background_image" v-if="!game.clip">
 							</div>
 							<div class="meta__info">
 								<div class="info">
 									<div class="info__image">
-										<img src="@/assets/images/game4.jpg">
+										<img :src="game.background_image_additional">
 									</div>
 									<dl class="info__list">
 										<dt>개발사</dt>
-										<dd>CD PROJECKT RED CD PROJECKT RED</dd>
+										<dd>{{ game.developers[0].name }}</dd>
 										<dt>배급사</dt>
-										<dd>CD PROJECKT RED</dd>
+										<dd>{{ game.publishers[0].name }}</dd>
 									</dl>
 									<div class="info__meta">
 										<Tag></Tag>
@@ -30,27 +31,27 @@
 								</div>
 							</div>
 						</article>
-						<article class="game__article desc">
-							“사이버펑크 2077”은 권력, 사치와 신체 개조에 집착하는 거대 도시 “나이트 시티”를 배경으로 한 오픈 월드, 액션 어드벤처 게임입니다.
-							당신은 무법자 용병 “V”가 되어, 유일무이한 불멸의 열쇠를 뒤쫓고 있습니다. 당신은 사이버웨어와 다양한 능력, 플레이스타일을 변경할 수 있고,
-							거대한 도시를 탐험하며 당신의 선택과 결정이 스토리의 전개 뿐만 아니라 당신을 감싸고 있는 이 세계에 어떤 영향을 미치는지 확인할수 있습니다.
-						</article>
-						<article class="game__article">
-							<ul class="game__image">
-								<li>
-									<img src="@/assets/images/game5.jpg">
-								</li>
-								<li>
-									<img src="@/assets/images/game6.jpg">
-								</li>
-								<li>
-									<img src="@/assets/images/game7.jpg">
-								</li>
-								<li>
-									<img src="@/assets/images/game8.jpg">
-								</li>
-							</ul>
-						</article>
+<!--						<article class="game__article desc">-->
+<!--							“사이버펑크 2077”은 권력, 사치와 신체 개조에 집착하는 거대 도시 “나이트 시티”를 배경으로 한 오픈 월드, 액션 어드벤처 게임입니다.-->
+<!--							당신은 무법자 용병 “V”가 되어, 유일무이한 불멸의 열쇠를 뒤쫓고 있습니다. 당신은 사이버웨어와 다양한 능력, 플레이스타일을 변경할 수 있고,-->
+<!--							거대한 도시를 탐험하며 당신의 선택과 결정이 스토리의 전개 뿐만 아니라 당신을 감싸고 있는 이 세계에 어떤 영향을 미치는지 확인할수 있습니다.-->
+<!--						</article>-->
+<!--						<article class="game__article">-->
+<!--							<ul class="game__image">-->
+<!--								<li>-->
+<!--									<img src="@/assets/images/game5.jpg">-->
+<!--								</li>-->
+<!--								<li>-->
+<!--									<img src="@/assets/images/game6.jpg">-->
+<!--								</li>-->
+<!--								<li>-->
+<!--									<img src="@/assets/images/game7.jpg">-->
+<!--								</li>-->
+<!--								<li>-->
+<!--									<img src="@/assets/images/game8.jpg">-->
+<!--								</li>-->
+<!--							</ul>-->
+<!--						</article>-->
 					</section>
 				</div>
 			</div>
@@ -68,8 +69,16 @@
 		name: 'Home',
 		data() {
 			return {
-				background: require('@/assets/images/game2.jpg')
+				id : this.$route.params.id,
+				game : null
 			}
+		},
+		created() {
+			this.$http.get('https://api.rawg.io/api/games/'+this.id)
+			.then(res=> {
+				this.game = res.data;
+				console.log(res);
+			})
 		}
 	}
 </script>
