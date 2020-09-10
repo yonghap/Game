@@ -10,17 +10,23 @@
 						<h2 class="article__title">
 							{{ title }}
 						</h2>
-						<ul class="list">
-							<li v-for="item in games">
+						<transition-group tag="ul" class="list" mode="out-in" name="list">
+							<li
+								v-for="(item, index) in games"
+								v-bind:key="item.id"
+								:style="{
+									'transition-delay' : (index * 0.08) + 's'
+								}"
+							>
 								<a :href="'detail/'+item.id">
-									<span class="list__image" :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}">
+									<span class="list__image" :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}" >
 									</span>
 									<span class="list__title">
 										{{ item.name   }}
 									</span>
 								</a>
 							</li>
-						</ul>
+						</transition-group>
 						<div class="more">
 							<a href="#" class="btn-common">
 								MORE

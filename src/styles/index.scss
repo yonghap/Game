@@ -133,6 +133,17 @@ button {
 	opacity: 0;
 	transform: translateX(30px);
 }
+.list-enter-active,
+.list-leave-active {
+	transition:all .5s;
+}
+.list-enter {
+	opacity:0;
+}
+.list-leave-to {
+	display:none;
+	opacity:0;
+}
 //ELEMENTS
 // btns
 .btn {
