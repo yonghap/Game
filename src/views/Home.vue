@@ -9,9 +9,9 @@
 					{{ intro.metacritic }}
 				</div>
 				<div class="intro__btn">
-					<button type="button" class="btn">
+					<a class="btn" :href="'/game/detail/'+intro.id">
 						<span class="btn__text">MORE</span>
-					</button>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -69,6 +69,7 @@
 			margin-bottom:20px;
 			font-size:6rem;
 			color:#fff;
+			line-height:1.3;
 			text-shadow:5px 5px 10px #666;
 		}
 		&__metacritic {
@@ -78,7 +79,7 @@
 			border-radius:5px;
 			background:#6c3;
 			font-size:1.6rem;
-			line-height:70px;
+			line-height:72px;
 			color:#eee;
 		}
 		&__btn {
