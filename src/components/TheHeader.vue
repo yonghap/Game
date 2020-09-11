@@ -19,7 +19,7 @@
 		background:#171A21;
 		&__row {
 			display:flex;
-			max-width:960px;
+			max-width:1000px;
 			margin:0 auto;
 			padding:20px;
 			justify-content:space-between;

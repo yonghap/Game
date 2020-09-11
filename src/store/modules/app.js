@@ -1,9 +1,9 @@
 import axios from "axios"
 
 const state = {
-	introGame : null,
-	categoryGame : null,
-	isLoading : false
+	introGame: null,
+	categoryGame: null,
+	isLoading: false
 }
 
 const mutations = {
@@ -30,10 +30,20 @@ const actions = {
 			})
 		})
 	},
-	getSearchGame({commit},type) {
+	getSearchGame({commit}, type) {
 		return new Promise((resolve, reject) => {
-				type.ordering = type.ordering == 'date' ? '&dates=2020-08-01,2020-09-01' : '';
-		        axios.get('https://api.rawg.io/api/games?ordering=null' + type.ordering)
+			let orderType = '';
+			switch(type.ordering) {
+				case 'default' :
+					break;
+				case 'date' :
+					orderType = '&dates=2020-08-01,2020-09-01';
+					break;
+				default :
+					orderType = '&genres=' + type.ordering;
+					break;
+			}
+			axios.get('https://api.rawg.io/api/games?ordering=null' + orderType)
 				.then((res) => {
 					commit('SET_CATEGORYGAME', res.data);
 					resolve();

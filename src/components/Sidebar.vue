@@ -10,11 +10,13 @@
 		<div class="sidever__item">
 			<h3 class="sidebar__title">장르</h3>
 			<ul class="sidebar__list">
-				<li><a href="#">대규모 멀티플레이어</a></li>
-				<li><a href="#">롤플레잉</a></li>
-				<li><a href="#">FPS</a></li>
-				<li><a href="#">시뮬레이션</a></li>
-				<li><a href="#">레이싱</a></li>
+				<li v-bind:class="{ 'active' : type == 'action'}"><button type="button" @click="getCategory('action')">액션</button></li>
+				<li v-bind:class="{ 'active' : type == 'massively-multiplayer'}"><button type="button" @click="getCategory('massively-multiplayer')">대규모 멀티플레이어</button></li>
+				<li v-bind:class="{ 'active' : type == 'role-playing-games-rpg'}"><button type="button" @click="getCategory('role-playing-games-rpg')">RPG</button></li>
+				<li v-bind:class="{ 'active' : type == 'adventure'}"><button type="button" @click="getCategory('adventure')">어드벤쳐</button></li>
+				<li v-bind:class="{ 'active' : type == 'simulation'}"><button type="button" @click="getCategory('simulation')">시뮬레이션</button></li>
+				<li v-bind:class="{ 'active' : type == 'sports'}"><button type="button" @click="getCategory('sports')">스포츠</button></li>
+				<li v-bind:class="{ 'active' : type == 'puzzle'}"><button type="button" @click="getCategory('puzzle')">퍼즐</button></li>
 			</ul>
 		</div>
 	</nav>
@@ -55,22 +57,24 @@
 			color:$titleColor;
 		}
 		a, button {
-			padding:0 15px;
-			border:none;
-			outline:none;
+			display:inline-block;
+			margin-left:5px;
+			padding:3px 5px 2px 5px;
 			font-family:'NEXON Gothic';
-			font-size:1.01rem;
-			color:$textColor;
-			line-height:1.8;
+			font-size:1rem;
+			color:$titleColor;
 			cursor:pointer;
-			&:hover {
-				color:$highlightColor;
-			}
+			outline:none;
+
 		}
 		&__list {
-			li.active {
-				a, button {
-					color:$highlightColor;
+			li {
+				margin:5px 0;
+				&.active {
+					a,button {
+						background:rgba(103,193,245,.2);
+						color:$highlightColor;
+					}
 				}
 			}
 		}

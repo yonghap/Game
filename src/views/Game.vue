@@ -91,12 +91,13 @@
 <style lang="scss" scoped>
 	@import '@/styles/variables.scss';
 	.title {
-		padding-top:22%;
+		padding-top:18%;
 		padding-bottom:1.6%;
 		background-position:50% 0%;
 		background-size:cover;
 		font-size:3.8rem;
 		color:#fff;
+		text-shadow:5px 5px 10px #666;
 	}
 	.game {
 		&__detail {
