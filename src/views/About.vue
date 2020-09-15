@@ -3,8 +3,17 @@
 		<div class="inner">
 			<div class="box">
 				<section class="box__wrap desc">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam atque dicta ea earum eligendi et fuga, fugit harum modi natus necessitatibus nobis odit quo sed sint tempore ullam unde.
-
+					<h2>
+						VueJS 토이 프로젝트
+					</h2>
+					<h3>Prototyping</h3>
+					<p>
+						Figma
+					</p>
+					<h3>FrontEnd</h3>
+					<p>
+						VueJS, Vuex, VueRouter
+					</p>
 				</section>
 			</div>
 		</div>

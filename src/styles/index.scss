@@ -49,6 +49,13 @@ button {
 .desc {
 	color:$textColor;
 	line-height:1.8;
+	h2 {
+		font-size:2.2rem;
+	}
+	h3 {
+		margin-top:20px;
+		font-size:1.6rem;
+	}
 }
 .inner {
 	padding:50px;

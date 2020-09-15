@@ -16,19 +16,19 @@
 							<div class="meta__info">
 								<div class="info">
 									<ul class="info__list">
-										<li>
+										<li v-if="game.developers.length > 0">
 											<span>개발사</span>
 											{{ game.developers[0].name }}
 										</li>
-										<li>
+										<li v-if="game.publishers.length > 0">
 											<span>배급사</span>
 											{{ game.publishers[0].name }}
 										</li>
-										<li>
+										<li v-if="game.released">
 											<span>출시일</span>
 											{{ game.released }}
 										</li>
-										<li>
+										<li v-if="game.website">
 											<span>웹사이트</span>
 											<a :href="game.website" target="_blank">
 												{{ game.website }}
