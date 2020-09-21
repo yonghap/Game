@@ -39,7 +39,7 @@
 										{{ game.metacritic }}
 									</div>
 									<div class="info__meta">
-										<Tag></Tag>
+										<Tag v-bind:genres="game.genres"></Tag>
 									</div>
 								</div>
 							</div>
@@ -83,7 +83,6 @@
 			.then(this.$http.spread((detailRes, scRes) => {
 				this.game = detailRes.data;
 				this.sc = scRes.data;
-				console.log(this.game);
 			}))
 		}
 	}

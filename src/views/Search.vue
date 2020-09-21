@@ -18,7 +18,7 @@
 									'transition-delay' : (index * 0.08) + 's'
 								}"
 							>
-								<a :href="'detail/'+item.id">
+								<a :href="'/detail/'+item.id">
 									<span class="list__image" :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}" >
 									</span>
 									<span class="list__title">

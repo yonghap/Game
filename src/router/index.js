@@ -22,8 +22,14 @@ const routes = [
 		]
 	},
 	{
-		path: '/detail/:id',
-		component: () => import('@/views/Game')
+		path : '/detail',
+		component : Layout,
+		children : [
+			{
+				path : ':id',
+				component : () => import('@/views/Game')
+			}
+		]
 	},
 	{
 		path: '/search',
@@ -32,7 +38,11 @@ const routes = [
 			{
 				path : '/',
 				component: () => import('@/views/Search')
-			}
+			},
+			{
+				path : 'genres/:genres',
+				component: () => import('@/views/Search')
+			},
 		]
 	},
 ]
