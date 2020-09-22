@@ -3,6 +3,7 @@ import axios from "axios"
 const state = {
 	introGame: null,
 	categoryGame: null,
+	currentCategory : null,
 	isLoading: false
 }
 
@@ -16,6 +17,9 @@ const mutations = {
 	SET_CATEGORYGAME(state, game) {
 		state.categoryGame = game;
 	},
+	SET_CATEGORY(state, game) {
+		state.currentCategory = game;
+	}
 }
 
 const actions = {

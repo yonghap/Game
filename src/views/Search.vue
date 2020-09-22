@@ -3,7 +3,7 @@
 		<div class="inner">
 			<div class="box">
 				<Sidebar
-					v-on:getCategory="getCategory"
+					v-on:getList="getList"
 				></Sidebar>
 				<section class="box__wrap">
 					<article class="article">
@@ -57,6 +57,7 @@
 			}
 		},
 		created() {
+
 		},
 		methods : {
 			getCropImage(addr) {
@@ -64,27 +65,11 @@
 				let end = addr.substring(27,addr.length);
 				return first + this.cropText + end;
 			},
-			setCategoryTitle(type) {
-				switch (type) {
-					case 'default' :
-						this.title = '인기 게임';
-						break;
-					case 'date' :
-						this.title = '신규 출시';
-						break;
-				}
-			},
-			getCategory(type) {
-				this.$store.commit('SET_LOADING');
-				this.$store.dispatch('getSearchGame',{
-					ordering : type
-				})
-				.then(() => {
-					this.setCategoryTitle(type);
-					this.games = this.$store.getters.categoryGame.results;
-					this.$store.commit('SET_LOADING');
-				})
+			getList(data) {
+				this.games = data;
+				this.title = this.$store.getters.currentCategory;
 			}
+
 		}
 	}
 </script>

@@ -9,7 +9,7 @@
 					{{ intro.metacritic }}
 				</div>
 				<div class="intro__btn">
-					<a class="btn" :href="'/game/detail/'+intro.id">
+					<a class="btn" :href="'/detail/'+intro.id">
 						<span class="btn__text">MORE</span>
 					</a>
 				</div>

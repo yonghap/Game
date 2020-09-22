@@ -22,14 +22,18 @@ const routes = [
 		]
 	},
 	{
-		path : '/detail',
+		path: '/category',
 		component : Layout,
 		children : [
 			{
 				path : ':id',
-				component : () => import('@/views/Game')
-			}
+				component: () => import('@/views/Search')
+			},
 		]
+	},
+	{
+		path : '/detail/:id',
+		component : () => import('@/views/Game')
 	},
 	{
 		path: '/search',

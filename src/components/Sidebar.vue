@@ -17,16 +17,21 @@
 				<li v-bind:class="{ 'active' : type == 'simulation'}"><button type="button" @click="getCategory('simulation')">시뮬레이션</button></li>
 				<li v-bind:class="{ 'active' : type == 'sports'}"><button type="button" @click="getCategory('sports')">스포츠</button></li>
 				<li v-bind:class="{ 'active' : type == 'puzzle'}"><button type="button" @click="getCategory('puzzle')">퍼즐</button></li>
+				<li v-bind:class="{ 'active' : type == 'indie'}"><button type="button" @click="getCategory('indie')">인디</button></li>
 			</ul>
 		</div>
 	</nav>
 </template>
 
 <script>
+	import translate from '@/utils/translate';
+
 	export default {
 		data() {
 			return {
-				type : 'default'
+				type : 'default',
+				games : null,
+				translate : translate
 			}
 		},
 		mounted() {
@@ -34,8 +39,17 @@
 		},
 		methods : {
 			getCategory(type) {
-				this.type = type;
-				this.$emit('getCategory',this.type)
+				this.$store.commit('SET_LOADING');
+				this.$store.dispatch('getSearchGame',{
+					ordering : type
+				})
+					.then(() => {
+						this.type = type;
+						this.$store.commit('SET_CATEGORY',translate(type));
+						this.games = this.$store.getters.categoryGame.results;
+						this.$emit('getList',this.games);
+						this.$store.commit('SET_LOADING');
+					})
 			}
 		}
 	}

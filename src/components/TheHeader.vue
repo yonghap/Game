@@ -2,7 +2,7 @@
 	<header id="header" class="header">
 		<div class="header__row">
 			<h1 class="logo">
-				<a href="#">
+				<a href="/">
 					<img src="@/assets/images/logo.png" alt="Gameb">
 				</a>
 			</h1>

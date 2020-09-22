@@ -9,6 +9,5 @@ module.exports = {
 			}
 		}
 	},
-	outputDir: '../public',
-	publicPath : '/game'
+	outputDir: '../public'
 }
