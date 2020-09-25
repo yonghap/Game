@@ -13,7 +13,6 @@
 
 <script>
 	import Loading from './components/Loading'
-
 	export default {
 		components : {
 			Loading
@@ -34,6 +33,7 @@
 <style lang="scss">
 	.nav {
 		a {
+			margin:0 10px;
 			color:#fff;
 		}
 	}
