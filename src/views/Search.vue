@@ -20,6 +20,14 @@
 							>
 								<a :href="'/detail/'+item.id">
 									<span class="list__image" :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}" >
+										<span class="star">
+											<span class="star__bg">
+												★★★★★
+											</span>
+											<span class="star__active">
+												★★★★★
+											</span>
+										</span>
 									</span>
 									<span class="list__title">
 										{{ item.name   }}
@@ -27,11 +35,6 @@
 								</a>
 							</li>
 						</transition-group>
-						<div class="more">
-							<a href="#" class="btn-common">
-								MORE
-							</a>
-						</div>
 					</article>
 				</section>
 			</div>

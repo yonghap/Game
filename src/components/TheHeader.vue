@@ -8,7 +8,9 @@
 			</h1>
 			<nav id="nav" class="nav">
 				<router-link to="/about">소개</router-link>
-				<router-link to="/search">둘러보기</router-link>
+				<router-link to="/search">인기제품</router-link>
+				<router-link to="/search">신규출시</router-link>
+				<router-link to="/search">평가보기</router-link>
 			</nav>
 		</div>
 	</header>
