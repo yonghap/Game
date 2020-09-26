@@ -2,9 +2,9 @@
 	<div id="content" class="content">
 		<div class="inner">
 			<div class="box">
-				<Sidebar
-					v-on:getList="getList"
-				></Sidebar>
+<!--				<Sidebar-->
+<!--					v-on:getList="getList"-->
+<!--				></Sidebar>-->
 				<section class="box__wrap">
 					<article class="article">
 						<h2 class="article__title">

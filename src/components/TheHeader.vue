@@ -10,7 +10,7 @@
 				<router-link to="/about">소개</router-link>
 				<router-link to="/search">인기제품</router-link>
 				<router-link to="/search">신규출시</router-link>
-				<router-link to="/search">평가보기</router-link>
+				<router-link to="/search">평가</router-link>
 			</nav>
 		</div>
 	</header>
@@ -21,7 +21,7 @@
 		background:#171A21;
 		&__row {
 			display:flex;
-			max-width:1000px;
+			max-width:1100px;
 			margin:0 auto;
 			padding:20px;
 			justify-content:space-between;
