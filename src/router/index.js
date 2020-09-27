@@ -22,31 +22,40 @@ const routes = [
 		]
 	},
 	{
-		path: '/category',
-		component : Layout,
-		children : [
-			{
-				path : ':id',
-				component: () => import('@/views/Search')
-			},
-		]
-	},
-	{
 		path : '/detail/:id',
 		component : () => import('@/views/Game')
 	},
 	{
-		path: '/search',
+		path: '/best',
 		component : Layout,
 		children : [
 			{
 				path : '/',
+				meta : { 'title' : '인기제품', 'type' : 'default' },
 				component: () => import('@/views/Search')
-			},
+			}
+		]
+	},
+	{
+		path: '/new',
+		component : Layout,
+		children : [
 			{
-				path : 'genres/:genres',
+				path : '/',
+				meta : { 'title' : '신규출시', 'type' : 'date' },
 				component: () => import('@/views/Search')
-			},
+			}
+		]
+	},
+	{
+		path: '/evaluate',
+		component : Layout,
+		children : [
+			{
+				path : '/',
+				meta : { 'title' : '평가하기', 'type' : 'default' },
+				component: () => import('@/views/Search')
+			}
 		]
 	},
 ]

@@ -8,22 +8,30 @@
 			</h1>
 			<nav id="nav" class="nav">
 				<router-link to="/about">소개</router-link>
-				<router-link to="/search">인기제품</router-link>
-				<router-link to="/search">신규출시</router-link>
-				<router-link to="/search">평가</router-link>
+				<router-link to="/best">인기제품</router-link>
+				<router-link to="/new">신규출시</router-link>
+				<router-link to="/evaluate">평가하기</router-link>
 			</nav>
 		</div>
 	</header>
 </template>
+<script>
+	export default {
+		data() {
+			return {
+
+			}
+		}
+	}
+</script>
 <style lang="scss" scoped>
 	@import '@/styles/variables.scss';
 	.header {
 		background:#171A21;
 		&__row {
 			display:flex;
-			max-width:1100px;
 			margin:0 auto;
-			padding:20px;
+			padding:26px 50px;
 			justify-content:space-between;
 		}
 	}

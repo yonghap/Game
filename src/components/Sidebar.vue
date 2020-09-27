@@ -43,13 +43,13 @@
 				this.$store.dispatch('getSearchGame',{
 					ordering : type
 				})
-					.then(() => {
-						this.type = type;
-						this.$store.commit('SET_CATEGORY',translate(type));
-						this.games = this.$store.getters.categoryGame.results;
-						this.$emit('getList',this.games);
-						this.$store.commit('SET_LOADING');
-					})
+				.then(() => {
+					this.type = type;
+					this.$store.commit('SET_CATEGORY',translate(type));
+					this.games = this.$store.getters.categoryGame.results;
+					this.$emit('getList',this.games);
+					this.$store.commit('SET_LOADING');
+				})
 			}
 		}
 	}

@@ -55,12 +55,21 @@
 		data() {
 			return {
 				games : null,
-				title : '',
 				cropText : 'crop/600/400'
 			}
 		},
-		created() {
-
+		computed : {
+			title : function () {
+				return this.$route.meta.title
+			},
+			type : function () {
+				return this.$route.meta.type
+			}
+		},
+		mounted() {
+			this.$nextTick(function () {
+				this.getList();
+			})
 		},
 		methods : {
 			getCropImage(addr) {
@@ -68,9 +77,15 @@
 				let end = addr.substring(27,addr.length);
 				return first + this.cropText + end;
 			},
-			getList(data) {
-				this.games = data;
-				this.title = this.$store.getters.currentCategory;
+			getList() {
+				this.$store.commit('SET_LOADING');
+				this.$store.dispatch('getSearchGame',{
+					ordering : this.type
+				})
+				.then(() => {
+					this.games = this.$store.getters.categoryGame.results;
+					this.$store.commit('SET_LOADING');
+				})
 			}
 
 		}

@@ -10,9 +10,17 @@
 					<p>
 						Figma
 					</p>
-					<h3>FrontEnd</h3>
+					<h3>Framework</h3>
 					<p>
-						VueJS, Vuex, VueRouter
+						Vue (Vuex, VueRouter)
+					</p>
+					<h3>Styling</h3>
+					<p>
+						SASS
+					</p>
+					<h3>Game API</h3>
+					<p>
+						RAWG
 					</p>
 				</section>
 			</div>

@@ -93,7 +93,7 @@ button {
 		flex-basis:25%;
 		flex-shrink:1;
 		margin-bottom:20px;
-		padding:0 10px;
+		padding:0 12px;
 		box-sizing:border-box;
 		span {
 			display:block;
@@ -131,8 +131,8 @@ button {
 }
 .star {
 	position:absolute;
-	bottom:5px;
-	right:5px;
+	bottom:10px;
+	right:10px;
 	font-size:28px;
 	letter-spacing:-.1rem;
 	text-align:center;

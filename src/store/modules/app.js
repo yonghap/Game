@@ -3,7 +3,6 @@ import axios from "axios"
 const state = {
 	introGame: null,
 	categoryGame: null,
-	currentCategory : null,
 	isLoading: false
 }
 
@@ -16,9 +15,6 @@ const mutations = {
 	},
 	SET_CATEGORYGAME(state, game) {
 		state.categoryGame = game;
-	},
-	SET_CATEGORY(state, game) {
-		state.currentCategory = game;
 	}
 }
 
@@ -42,9 +38,6 @@ const actions = {
 					break;
 				case 'date' :
 					orderType = '&dates=2020-08-01,2020-09-01';
-					break;
-				default :
-					orderType = '&genres=' + type.ordering;
 					break;
 			}
 			axios.get('https://api.rawg.io/api/games?ordering=null' + orderType)
