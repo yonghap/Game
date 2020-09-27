@@ -15,15 +15,6 @@
 		</div>
 	</header>
 </template>
-<script>
-	export default {
-		data() {
-			return {
-
-			}
-		}
-	}
-</script>
 <style lang="scss" scoped>
 	@import '@/styles/variables.scss';
 	.header {
@@ -55,6 +46,9 @@
 			&:hover {
 				color:$highlightColor;
 			}
+		}
+		.router-link-active {
+			color:$highlightColor;
 		}
 	}
 </style>

@@ -31,7 +31,7 @@ const routes = [
 		children : [
 			{
 				path : '/',
-				meta : { 'title' : '인기제품', 'type' : 'default' },
+				meta : { 'name' : 'best', 'title' : '인기제품', 'type' : 'default' },
 				component: () => import('@/views/Search')
 			}
 		]
@@ -42,7 +42,7 @@ const routes = [
 		children : [
 			{
 				path : '/',
-				meta : { 'title' : '신규출시', 'type' : 'date' },
+				meta : { 'name' : 'new', 'title' : '신규출시', 'type' : 'date' },
 				component: () => import('@/views/Search')
 			}
 		]
@@ -53,7 +53,7 @@ const routes = [
 		children : [
 			{
 				path : '/',
-				meta : { 'title' : '평가하기', 'type' : 'default' },
+				meta : { 'name' : 'evaluate', 'title' : '평가하기', 'type' : 'default' },
 				component: () => import('@/views/Search')
 			}
 		]
