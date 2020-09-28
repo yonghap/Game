@@ -43,12 +43,10 @@
 </template>
 
 <script>
-	import Sidebar from '@/components/Sidebar';
 	import Tag from '@/components/Tag';
 
 		export default {
 		components: {
-			Sidebar,
 			Tag
 		},
 		name: 'Search',
