@@ -92,9 +92,9 @@ button {
 	li {
 		flex-basis:25%;
 		flex-shrink:1;
-		margin-bottom:20px;
-		padding:0 12px;
+		padding:0 12px 40px 12px;
 		box-sizing:border-box;
+		text-align:right;
 		span {
 			display:block;
 		}
@@ -105,6 +105,7 @@ button {
 					color:$highlightColor;
 				}
 				.list__image {
+					opacity:1;
 					background-size:100% auto;
 				}
 			}
@@ -116,10 +117,12 @@ button {
 		background-repeat:no-repeat;
 		background-position:50% 50%;
 		background-size:105% auto;
+		opacity:.8;
 		@include transition;
 	}
 	&__title {
-		padding:10px 0;
+		padding:20px 0 5px 0;
+		font-size:1.2rem;
 		color:$textColor;
 		word-break:break-all;
 	}
@@ -130,13 +133,13 @@ button {
 	}
 }
 .star {
-	position:absolute;
-	bottom:10px;
-	right:10px;
+	background:none;
 	font-size:28px;
-	letter-spacing:-.1rem;
+	letter-spacing:-.06rem;
 	text-align:center;
 	line-height:1em;
+	outline:none;
+	cursor:pointer;
 	&__bg {
 		color:rgba(255, 255, 255, 0.4);
 	}
@@ -145,7 +148,7 @@ button {
 		position:absolute;
 		top:0;
 		left:0;
-		width:50%;
+		width:0;
 		color:rgb(255,183,98);
 	}
 }
