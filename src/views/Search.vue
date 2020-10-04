@@ -23,7 +23,7 @@
 										{{ item.name   }}
 									</span>
 								</a>
-								<Stars></Stars>
+								<Stars v-bind:game="item.id"></Stars>
 							</li>
 						</transition-group>
 					</article>
@@ -44,7 +44,8 @@
 		data() {
 			return {
 				games: null,
-				cropText: 'crop/600/400'
+				cropText: 'crop/600/400',
+				rating : localStorage
 			}
 		},
 		computed: {
@@ -71,13 +72,10 @@
 				this.$store.dispatch('getSearchGame', {
 					ordering: this.type
 				})
-					.then(() => {
-						this.games = this.$store.getters.categoryGame.results;
-						this.$store.commit('SET_LOADING');
-					})
-			},
-			ratingOver : function (event) {
-				console.log(event);
+				.then(() => {
+					this.games = this.$store.getters.categoryGame.results;
+					this.$store.commit('SET_LOADING');
+				})
 			}
 		}
 	}
