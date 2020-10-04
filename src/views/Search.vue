@@ -2,9 +2,6 @@
 	<div id="content" class="content">
 		<div class="inner">
 			<div class="box">
-				<!--				<Sidebar-->
-				<!--					v-on:getList="getList"-->
-				<!--				></Sidebar>-->
 				<section class="box__wrap">
 					<article class="article">
 						<h2 class="article__title">
@@ -26,16 +23,7 @@
 										{{ item.name   }}
 									</span>
 								</a>
-								<div class="list__start">
-									<button type="button" class="star" @mousemove="ratingOver">
-										<span class="star__bg">
-											★★★★★
-										</span>
-										<span class="star__active">
-											★★★★★
-										</span>
-									</button>
-								</div>
+								<Stars></Stars>
 							</li>
 						</transition-group>
 					</article>
@@ -46,11 +34,11 @@
 </template>
 
 <script>
-	import Tag from '@/components/Tag';
+	import Stars from '@/components/Stars';
 
 	export default {
 		components: {
-			Tag
+			Stars
 		},
 		name: 'Search',
 		data() {
