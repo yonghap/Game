@@ -26,6 +26,9 @@
 								<Stars v-bind:game="item.id" v-bind:star="getRating(item.id)"></Stars>
 							</li>
 						</transition-group>
+						<div class="more">
+							<button type="button" class="btn-more">MORE</button>
+						</div>
 					</article>
 				</section>
 			</div>

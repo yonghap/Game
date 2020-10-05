@@ -128,7 +128,16 @@ button {
 	}
 }
 .more {
-	text-align:right;
+	margin-top:30px;
+	text-align:center;
+}
+.btn-more {
+	display:block;
+	width:100%;
+	padding:10px 0;
+	background:rgba(103,193,245,.2);
+	font-size:1rem;
+	color:$highlightColor;
 }
 //TRANSITIONS
 /* fade-transform */
