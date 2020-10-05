@@ -10,7 +10,7 @@
 				<router-link to="/about">소개</router-link>
 				<router-link to="/best">인기제품</router-link>
 				<router-link to="/new">신규출시</router-link>
-				<router-link to="/evaluate">평가하기</router-link>
+				<router-link to="/evaluate">내 취향게임</router-link>
 			</nav>
 		</div>
 	</header>

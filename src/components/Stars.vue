@@ -1,9 +1,9 @@
 <template>
 	<div class="rating">
 		<div class="rating__wrap">
-			<span class="rating__item" v-for="(item, index) in 5" @click="setRating(5-index)"
+			<span class="rating__item" v-for="(item, index) in 5" @click="setRating(index)"
 			      :class="{
-					'active' : getRating(game)
+					'active' : (5 - newStar) == index
 			      }"
 			>
 			</span>
@@ -15,26 +15,17 @@
 	export default {
 		props: {
 			game: Number,
-			star: Number
+			star : Number
 		},
 		data() {
 			return {
-				ratings: localStorage
+				newStar : this.star
 			}
 		},
 		methods: {
 			setRating(grad) {
-				localStorage.setItem(this.game, grad);
-			},
-			getRating(id) {
-				if (typeof id == 'number') {
-					for (var prop in this.ratings) {
-						if (id == prop) {
-							console.log('t');
-						} else {
-						}
-					}
-				}
+				this.newStar = 5 - grad;
+				localStorage.setItem(this.game, 5 - grad);
 			}
 		}
 	}
@@ -52,6 +43,15 @@
 			&:before {
 				content:'★';
 				color:#aaa;
+				transition:all .2s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+			}
+			&.active {
+				&:before {
+					color:#ffed85;
+				}
+				& ~ .rating__item:before {
+					color:#ffed85;
+				}
 			}
 			&:hover {
 				&:before {

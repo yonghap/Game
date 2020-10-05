@@ -23,7 +23,7 @@
 										{{ item.name   }}
 									</span>
 								</a>
-								<Stars v-bind:game="item.id"></Stars>
+								<Stars v-bind:game="item.id" v-bind:star="getRating(item.id)"></Stars>
 							</li>
 						</transition-group>
 					</article>
@@ -45,7 +45,7 @@
 			return {
 				games: null,
 				cropText: 'crop/600/400',
-				rating : localStorage
+				ratings : localStorage
 			}
 		},
 		computed: {
@@ -76,6 +76,16 @@
 					this.games = this.$store.getters.categoryGame.results;
 					this.$store.commit('SET_LOADING');
 				})
+			},
+			getRating(id) {
+				if (typeof id == 'number') {
+					for (var prop in this.ratings) {
+						if (id == prop) {
+							return parseInt(this.ratings[prop]);
+						}
+					}
+					return 0;
+				}
 			}
 		}
 	}
