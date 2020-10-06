@@ -27,7 +27,7 @@
 							</li>
 						</transition-group>
 						<div class="more">
-							<button type="button" class="btn-more">MORE</button>
+							<button type="button" class="btn-more" @click="more">MORE</button>
 						</div>
 					</article>
 				</section>
@@ -47,7 +47,9 @@
 		data() {
 			return {
 				games: null,
+
 				cropText: 'crop/600/400',
+				currentPage : 1,
 				ratings : localStorage
 			}
 		},
@@ -89,6 +91,25 @@
 					}
 					return 0;
 				}
+			},
+			more() {
+				this.$store.commit('SET_LOADING');
+				let orderType = '';
+				this.currentPage++;
+				switch(this.type) {
+					case 'default' :
+						break;
+					case 'date' :
+						orderType = '&dates=2020-08-01,2020-09-01';
+						break;
+				}
+				this.$http.get('https://api.rawg.io/api/games?ordering=null&page='+ this.currentPage + orderType)
+					.then((res) => {
+						console.log(this.games);
+						console.log(res.data.results);
+						this.$store.commit('SET_LOADING');
+					}).catch(error => {
+				})
 			}
 		}
 	}
