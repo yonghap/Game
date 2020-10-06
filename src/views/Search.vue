@@ -47,7 +47,6 @@
 		data() {
 			return {
 				games: null,
-
 				cropText: 'crop/600/400',
 				currentPage : 1,
 				ratings : localStorage
