@@ -7,7 +7,7 @@
 						<h2 class="article__title">
 							{{ title }}
 						</h2>
-						<transition-group tag="ul" class="list" mode="out-in" name="list">
+						<ul class="list">
 							<li
 									v-for="(item, index) in games"
 									v-bind:key="item.id"
@@ -25,7 +25,7 @@
 								</a>
 								<Stars v-bind:game="item.id" v-bind:star="getRating(item.id)"></Stars>
 							</li>
-						</transition-group>
+						</ul>
 						<div class="more">
 							<button type="button" class="btn-more" @click="more">MORE</button>
 						</div>
