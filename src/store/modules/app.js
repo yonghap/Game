@@ -2,7 +2,7 @@ import axios from "axios"
 
 const state = {
 	introGame: null,
-	categoryGame: null,
+	categoryGame: [],
 	isLoading: false
 }
 
@@ -14,7 +14,11 @@ const mutations = {
 		state.introGame = game;
 	},
 	SET_CATEGORYGAME(state, game) {
-		state.categoryGame = game;
+		if (state.categoryGame.length > 0) {
+			Array.prototype.push.apply(state.categoryGame, game);
+		} else {
+			state.categoryGame = game;
+		}
 	}
 }
 
@@ -40,9 +44,9 @@ const actions = {
 					orderType = '&dates=2020-08-01,2020-09-01';
 					break;
 			}
-			axios.get('https://api.rawg.io/api/games?ordering=null' + orderType)
+			axios.get('https://api.rawg.io/api/games?ordering=null&page=' + type.page + orderType)
 				.then((res) => {
-					commit('SET_CATEGORYGAME', res.data);
+					commit('SET_CATEGORYGAME', res.data.results);
 					resolve();
 				}).catch(error => {
 				reject(error);

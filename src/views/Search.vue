@@ -27,7 +27,7 @@
 							</li>
 						</ul>
 						<div class="more">
-							<button type="button" class="btn-more" @click="more">MORE</button>
+							<button type="button" class="btn-more" @click="getList">MORE</button>
 						</div>
 					</article>
 				</section>
@@ -71,16 +71,6 @@
 				let end = addr.substring(27, addr.length);
 				return first + this.cropText + end;
 			},
-			getList() {
-				this.$store.commit('SET_LOADING');
-				this.$store.dispatch('getSearchGame', {
-					ordering: this.type
-				})
-				.then(() => {
-					this.games = this.$store.getters.categoryGame.results;
-					this.$store.commit('SET_LOADING');
-				})
-			},
 			getRating(id) {
 				if (typeof id == 'number') {
 					for (var prop in this.ratings) {
@@ -91,24 +81,16 @@
 					return 0;
 				}
 			},
-			more() {
+			getList() {
 				this.$store.commit('SET_LOADING');
-				let orderType = '';
-				this.currentPage++;
-				switch(this.type) {
-					case 'default' :
-						break;
-					case 'date' :
-						orderType = '&dates=2020-08-01,2020-09-01';
-						break;
-				}
-				this.$http.get('https://api.rawg.io/api/games?ordering=null&page='+ this.currentPage + orderType)
-					.then((res) => {
-						console.log(this.games);
-						console.log(res.data.results);
-						this.$store.commit('SET_LOADING');
-					}).catch(error => {
+				this.$store.dispatch('getSearchGame', {
+					ordering: this.type,
+					page : this.currentPage++
 				})
+					.then(() => {
+						this.games = this.$store.getters.categoryGame.slice();
+						this.$store.commit('SET_LOADING');
+					})
 			}
 		}
 	}
