@@ -3,7 +3,8 @@ import axios from "axios"
 const state = {
 	introGame: null,
 	categoryGame: [],
-	isLoading: false
+	isLoading: false,
+	currentType : 'default'
 }
 
 const mutations = {
@@ -12,6 +13,9 @@ const mutations = {
 	},
 	SET_INTROGAME(state, game) {
 		state.introGame = game;
+	},
+	SET_TYPE(state, type) {
+		state.currentType = type;
 	},
 	SET_CATEGORYGAME(state, game) {
 		if (state.categoryGame.length > 0) {
@@ -36,6 +40,10 @@ const actions = {
 	},
 	getSearchGame({commit}, type) {
 		return new Promise((resolve, reject) => {
+			if (state.currentType != type.ordering) {
+				state.categoryGame = []
+			}
+			commit('SET_TYPE', type.ordering);
 			let orderType = '';
 			switch(type.ordering) {
 				case 'default' :
