@@ -7,6 +7,11 @@
 						<h2 class="article__title">
 							{{ title }}
 						</h2>
+						<div class="article__tag">
+							<a href="#" v-for="(item,index) in month">
+								{{ index + 1 }} 월
+							</a>
+						</div>
 						<ul class="list">
 							<li
 									v-for="(item, index) in games"
@@ -15,14 +20,14 @@
 									'transition-delay' : (index * 0.08) + 's'
 								}"
 							>
-								<a :href="'/detail/'+item.id">
+								<div class="list__item">
 									<span class="list__image"
 									      :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}">
 									</span>
 									<span class="list__title">
 										{{ item.name   }}
 									</span>
-								</a>
+								</div>
 								<Stars v-bind:game="item.id" v-bind:star="getRating(item.id)"></Stars>
 							</li>
 						</ul>
@@ -48,8 +53,8 @@
 			return {
 				games: null,
 				cropText: 'crop/600/400',
-				currentPage : 1,
-				ratings : localStorage
+				currentPage: 1,
+				ratings: localStorage
 			}
 		},
 		computed: {
@@ -58,6 +63,9 @@
 			},
 			type: function () {
 				return this.$route.meta.type
+			},
+			month : function () {
+				return new Date().getMonth() + 1;
 			}
 		},
 		mounted() {
@@ -85,7 +93,7 @@
 				this.$store.commit('SET_LOADING');
 				this.$store.dispatch('getSearchGame', {
 					ordering: this.type,
-					page : this.currentPage++
+					page: this.currentPage++
 				})
 					.then(() => {
 						this.games = this.$store.getters.categoryGame.slice();

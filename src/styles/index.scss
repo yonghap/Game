@@ -1,7 +1,6 @@
 @import './variables.scss';
 @import './mixin.scss';
 @import './font.scss';
-
 * {
 	margin:0;
 	padding:0;
@@ -24,12 +23,13 @@ img {
 	max-width:100%;
 	vertical-align:top;
 }
-ul,li,ol {
+ul, li, ol {
 	list-style:none;
 }
 button {
 	background:none;
 	border:none;
+	cursor:pointer;
 }
 .blind {
 	overflow:hidden;
@@ -65,7 +65,7 @@ button {
 	margin:0 auto;
 	&__wrap {
 		padding:40px;
-		background:rgba(0,0,0,.2);
+		background:rgba(0, 0, 0, .2);
 	}
 }
 .article {
@@ -79,9 +79,13 @@ button {
 		color:$titleColor;
 	}
 	&__tag {
-		margin-bottom:25px;
-		.tag a {
-			font-size:1.5rem;
+		margin-bottom:20px;
+		a {
+			display:inline-block;
+			margin:0 5px;
+			padding:2px 5px 1px 5px;
+			background:rgba(103, 193, 245, .2);
+			color:#67C1F5;
 		}
 	}
 }
@@ -98,16 +102,16 @@ button {
 		span {
 			display:block;
 		}
-		a {
-			display:block;
-			&:hover {
-				.list__title {
-					color:$highlightColor;
-				}
-				.list__image {
-					opacity:1;
-					background-size:100% auto;
-				}
+	}
+	&__item {
+		display:block;
+		&:hover {
+			.list__title {
+				color:$highlightColor;
+			}
+			.list__image {
+				opacity:1;
+				background-size:100% auto;
 			}
 		}
 	}
@@ -135,25 +139,24 @@ button {
 	display:block;
 	width:100%;
 	padding:10px 0;
-	background:rgba(103,193,245,.2);
+	background:rgba(103, 193, 245, .2);
 	font-size:1rem;
 	color:$highlightColor;
+	outline:none;
 }
 //TRANSITIONS
 /* fade-transform */
 .fade-transform-leave-active,
 .fade-transform-enter-active {
-	transition: all .5s;
+	transition:all .5s;
 }
-
 .fade-transform-enter {
-	opacity: 0;
-	transform: translateX(-30px);
+	opacity:0;
+	transform:translateX(-30px);
 }
-
 .fade-transform-leave-to {
-	opacity: 0;
-	transform: translateX(30px);
+	opacity:0;
+	transform:translateX(30px);
 }
 .list-enter-active,
 .list-leave-active {
@@ -201,7 +204,6 @@ button {
 	&:hover:before {
 		transform:scale(1.05);
 	}
-
 	&:active:before {
 		transform:scale(.99);
 	}
@@ -210,7 +212,7 @@ button {
 	display:inline-block;
 	margin-left:5px;
 	padding:2px 5px 1px 5px;
-	background:rgba(103,193,245,.2);
+	background:rgba(103, 193, 245, .2);
 	font-size:.9rem;
 	color:$highlightColor;
 }

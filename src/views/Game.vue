@@ -70,20 +70,20 @@
 		name: 'Home',
 		data() {
 			return {
-				id : this.$route.params.id,
-				game : null,
-				sc : null
+				id: this.$route.params.id,
+				game: null,
+				sc: null
 			}
 		},
 		created() {
 			this.$http.all([
-				this.$http.get('https://api.rawg.io/api/games/'+this.id),
-				this.$http.get('https://api.rawg.io/api/games/'+this.id+'/screenshots')
+				this.$http.get('https://api.rawg.io/api/games/' + this.id),
+				this.$http.get('https://api.rawg.io/api/games/' + this.id + '/screenshots')
 			])
-			.then(this.$http.spread((detailRes, scRes) => {
-				this.game = detailRes.data;
-				this.sc = scRes.data;
-			}))
+				.then(this.$http.spread((detailRes, scRes) => {
+					this.game = detailRes.data;
+					this.sc = scRes.data;
+				}))
 		}
 	}
 </script>
