@@ -1,8 +1,8 @@
 <template>
 	<div class="tag">
-		<a v-for="item in genres">
+		<span v-for="item in genres">
 			{{ translate(item.slug) }}
-		</a>
+		</span>
 	</div>
 </template>
 
@@ -25,9 +25,9 @@
 <style lang="scss" scoped>
 	.tag {
 		margin-left:-5px;
-		a {
+		span, a {
 			display:inline-block;
-			margin-left:5px;
+			margin:2px;
 			padding:2px 5px 1px 5px;
 			background:rgba(103,193,245,.2);
 			color:#67C1F5;

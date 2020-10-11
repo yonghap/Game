@@ -49,7 +49,8 @@ const actions = {
 				case 'default' :
 					break;
 				case 'date' :
-					orderType = '&dates=2020-08-01,2020-09-01';
+					// let d = ("0" + (new Date().getMonth() + 1)).slice(-2);
+					orderType = '&dates=2020-08-01,2020-10-31';
 					break;
 			}
 			axios.get('https://api.rawg.io/api/games?ordering=null&page=' + type.page + orderType)

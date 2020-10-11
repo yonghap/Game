@@ -7,11 +7,6 @@
 						<h2 class="article__title">
 							{{ title }}
 						</h2>
-						<div class="article__tag">
-							<a href="#" v-for="(item,index) in month">
-								{{ index + 1 }} 월
-							</a>
-						</div>
 						<ul class="list">
 							<li
 									v-for="(item, index) in games"
@@ -23,9 +18,13 @@
 								<div class="list__item">
 									<span class="list__image"
 									      :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}">
+										<span class="list__info">
+											<Tag v-bind:genres="item.genres"></Tag>
+<!--											{{ item.developers[0].name }}-->
+										</span>
 									</span>
 									<span class="list__title">
-										{{ item.name   }}
+										{{ item.name  }}
 									</span>
 								</div>
 								<Stars v-bind:game="item.id" v-bind:star="getRating(item.id)"></Stars>
@@ -43,10 +42,12 @@
 
 <script>
 	import Stars from '@/components/Stars';
+	import Tag from '@/components/Tag';
 
 	export default {
 		components: {
-			Stars
+			Stars,
+			Tag
 		},
 		name: 'Search',
 		data() {
@@ -63,9 +64,6 @@
 			},
 			type: function () {
 				return this.$route.meta.type
-			},
-			month : function () {
-				return new Date().getMonth() + 1;
 			}
 		},
 		mounted() {

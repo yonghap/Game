@@ -113,6 +113,9 @@ button {
 				opacity:1;
 				background-size:100% auto;
 			}
+			.list__info {
+				opacity:1;
+			}
 		}
 	}
 	&__image {
@@ -129,6 +132,17 @@ button {
 		font-size:1.2rem;
 		color:$textColor;
 		word-break:break-all;
+	}
+	&__info {
+		position:absolute;
+		bottom:0;
+		right:0;
+		width:100%;
+		padding:10px;
+		background:rgba(0,0,0,.8);
+		box-sizing:border-box;
+		opacity:0;
+		@include transition;
 	}
 }
 .more {

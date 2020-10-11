@@ -39,6 +39,9 @@ export default function (eng) {
 		case "simulation" :
 			return "시뮬레이션";
 			break;
+		case "arcade" :
+			return "아케이드 ";
+			break;
 		default :
 			break;
 	}
