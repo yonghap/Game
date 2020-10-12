@@ -20,7 +20,6 @@
 									      :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}">
 										<span class="list__info">
 											<Tag v-bind:genres="item.genres"></Tag>
-<!--											{{ item.developers[0].name }}-->
 										</span>
 									</span>
 									<span class="list__title">
@@ -30,9 +29,6 @@
 								<Stars v-bind:game="item" v-bind:star="getRating(item.id)"></Stars>
 							</li>
 						</ul>
-						<div class="more">
-							<button type="button" class="btn-more" @click="getList">MORE</button>
-						</div>
 					</article>
 				</section>
 			</div>
@@ -52,7 +48,7 @@
 		name: 'Search',
 		data() {
 			return {
-				games: null,
+				games: [],
 				cropText: 'crop/600/400',
 				currentPage: 1,
 				ratings: localStorage
@@ -88,15 +84,15 @@
 				}
 			},
 			getList() {
-				this.$store.commit('SET_LOADING');
-				this.$store.dispatch('getSearchGame', {
-					ordering: this.type,
-					page: this.currentPage++
-				})
-					.then(() => {
-						this.games = this.$store.getters.categoryGame.slice();
-						this.$store.commit('SET_LOADING');
-					})
+				for (var item in this.ratings) {
+					try {
+						if (typeof JSON.parse(this.ratings[item]) == 'object') {
+							this.games.push(JSON.parse(this.ratings[item]));
+						}
+					} catch (e) {
+						return false;
+					}
+				}
 			}
 		}
 	}

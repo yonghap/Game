@@ -54,7 +54,7 @@ const routes = [
 			{
 				path : '/',
 				meta : { 'name' : 'evaluate', 'title' : '평가하기', 'type' : 'default' },
-				component: () => import('@/views/Search')
+				component: () => import('@/views/Evaluate')
 			}
 		]
 	},

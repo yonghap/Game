@@ -14,7 +14,7 @@
 <script>
 	export default {
 		props: {
-			game: Number,
+			game: Object,
 			star : Number
 		},
 		data() {
@@ -22,10 +22,19 @@
 				newStar : this.star
 			}
 		},
+		mounted() {
+		},
 		methods: {
 			setRating(grad) {
 				this.newStar = 5 - grad;
-				localStorage.setItem(this.game, 5 - grad);
+				let localSaveInfo = {
+					'id' : this.game.id,
+					'name' : this.game.name,
+					'genres' : this.game.genres,
+					'background_image' : this.game.background_image,
+					'stars' : this.newStar
+				}
+				localStorage.setItem(this.game.id, JSON.stringify(localSaveInfo));
 			}
 		}
 	}
