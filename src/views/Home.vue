@@ -9,7 +9,7 @@
 					{{ intro.metacritic }}
 				</div>
 				<div class="intro__btn">
-					<a class="btn" :href="'/best'">
+					<a class="btn" :href="'best'">
 						<span class="btn__text">MORE</span>
 					</a>
 				</div>
