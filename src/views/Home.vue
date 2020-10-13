@@ -9,9 +9,9 @@
 					{{ intro.metacritic }}
 				</div>
 				<div class="intro__btn">
-					<a class="btn" :href="'best'">
+					<router-link class="btn" to="best">
 						<span class="btn__text">MORE</span>
-					</a>
+					</router-link>
 				</div>
 			</div>
 		</section>
