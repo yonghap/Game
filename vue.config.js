@@ -10,5 +10,5 @@ module.exports = {
 		}
 	},
 	outputDir: '../public',
-	indexPath: 'game.html'
+	publicPath:'/Game'
 }
