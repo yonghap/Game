@@ -7,7 +7,6 @@
 				</a>
 			</h1>
 			<nav id="nav" class="nav">
-				<router-link to="/about">소개</router-link>
 				<router-link to="/best">인기제품</router-link>
 				<router-link to="/new">신규출시</router-link>
 				<router-link to="/evaluate">평가게임</router-link>

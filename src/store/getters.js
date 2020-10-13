@@ -1,6 +1,6 @@
 const getters = {
 	introGame : state => state.app.introGame,
-	categoryGame : state => state.app.categoryGame,
+	gameList : state => state.app.gameList,
 	isLoading : state => state.app.isLoading
 }
 export default getters

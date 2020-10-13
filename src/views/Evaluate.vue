@@ -17,7 +17,7 @@
 							>
 								<div class="list__item">
 									<span class="list__image"
-									      :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}">
+									      :style="{'background-image': 'url('+getItems.getCropImage(item.background_image)+')'}">
 										<span class="list__info">
 											<Tag v-bind:genres="item.genres"></Tag>
 										</span>
@@ -39,6 +39,7 @@
 <script>
 	import Stars from '@/components/Stars';
 	import Tag from '@/components/Tag';
+	import getItems from '@/utils/getItem';
 
 	export default {
 		components: {
@@ -50,16 +51,13 @@
 			return {
 				games: [],
 				cropText: 'crop/600/400',
-				currentPage: 1,
-				ratings: localStorage
+				ratings: localStorage,
+				getItems : getItems
 			}
 		},
 		computed: {
 			title: function () {
 				return this.$route.meta.title
-			},
-			type: function () {
-				return this.$route.meta.type
 			}
 		},
 		mounted() {
@@ -68,11 +66,6 @@
 			})
 		},
 		methods: {
-			getCropImage(addr) {
-				let first = addr.substring(0, 28);
-				let end = addr.substring(27, addr.length);
-				return first + this.cropText + end;
-			},
 			getRating(id) {
 				if (typeof id == 'number') {
 					for (var prop in this.ratings) {
@@ -84,6 +77,7 @@
 				}
 			},
 			getList() {
+				this.$store.state.app.gameList.length = 0;
 				for (var item in this.ratings) {
 					try {
 						if (typeof JSON.parse(this.ratings[item]) == 'object') {

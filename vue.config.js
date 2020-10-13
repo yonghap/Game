@@ -9,5 +9,6 @@ module.exports = {
 			}
 		}
 	},
-	outputDir: '../public'
+	outputDir: '../public',
+	indexPath: 'game.html'
 }

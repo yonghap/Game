@@ -17,10 +17,9 @@
 							>
 								<div class="list__item">
 									<span class="list__image"
-									      :style="{'background-image': 'url('+getCropImage(item.background_image)+')'}">
+									      :style="{'background-image': 'url('+getItems.getCropImage(item.background_image)+')'}">
 										<span class="list__info">
 											<Tag v-bind:genres="item.genres"></Tag>
-<!--											{{ item.developers[0].name }}-->
 										</span>
 									</span>
 									<span class="list__title">
@@ -43,6 +42,7 @@
 <script>
 	import Stars from '@/components/Stars';
 	import Tag from '@/components/Tag';
+	import getItems from '@/utils/getItem';
 
 	export default {
 		components: {
@@ -55,7 +55,8 @@
 				games: null,
 				cropText: 'crop/600/400',
 				currentPage: 1,
-				ratings: localStorage
+				ls: localStorage,
+				getItems : getItems
 			}
 		},
 		computed: {
@@ -72,16 +73,11 @@
 			})
 		},
 		methods: {
-			getCropImage(addr) {
-				let first = addr.substring(0, 28);
-				let end = addr.substring(27, addr.length);
-				return first + this.cropText + end;
-			},
 			getRating(id) {
 				if (typeof id == 'number') {
-					for (var prop in this.ratings) {
+					for (var prop in this.ls) {
 						if (id == prop) {
-							return parseInt(JSON.parse(this.ratings[prop]).stars);
+							return parseInt(JSON.parse(this.ls[prop]).stars);
 						}
 					}
 					return 0;
@@ -94,7 +90,7 @@
 					page: this.currentPage++
 				})
 					.then(() => {
-						this.games = this.$store.getters.categoryGame.slice();
+						this.games = this.$store.getters.gameList.slice();
 						this.$store.commit('SET_LOADING');
 					})
 			}

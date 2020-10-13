@@ -2,7 +2,7 @@ import axios from "axios"
 
 const state = {
 	introGame: null,
-	categoryGame: [],
+	gameList: [],
 	isLoading: false,
 	currentType : 'default'
 }
@@ -17,11 +17,11 @@ const mutations = {
 	SET_TYPE(state, type) {
 		state.currentType = type;
 	},
-	SET_CATEGORYGAME(state, game) {
-		if (state.categoryGame.length > 0) {
-			Array.prototype.push.apply(state.categoryGame, game);
+	SET_GAMELIST(state, game) {
+		if (state.gameList.length > 0) {
+			Array.prototype.push.apply(state.gameList, game);
 		} else {
-			state.categoryGame = game;
+			state.gameList = game;
 		}
 	}
 }
@@ -41,7 +41,7 @@ const actions = {
 	getSearchGame({commit}, type) {
 		return new Promise((resolve, reject) => {
 			if (state.currentType != type.ordering) {
-				state.categoryGame = []
+				state.gameList = []
 			}
 			commit('SET_TYPE', type.ordering);
 			let orderType = '';
@@ -55,7 +55,7 @@ const actions = {
 			}
 			axios.get('https://api.rawg.io/api/games?ordering=null&page=' + type.page + orderType)
 				.then((res) => {
-					commit('SET_CATEGORYGAME', res.data.results);
+					commit('SET_GAMELIST', res.data.results);
 					resolve();
 				}).catch(error => {
 				reject(error);
