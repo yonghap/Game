@@ -62,7 +62,7 @@ const routes = [
 
 const router = new VueRouter({
 	mode: 'history',
-	base: '/Game',
+	base: 'Game',
 	routes
 })
 
