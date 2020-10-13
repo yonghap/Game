@@ -26,7 +26,7 @@ const routes = [
 		component : () => import('@/views/Game')
 	},
 	{
-		path: '/best',
+		path: '/Game/best',
 		component : Layout,
 		children : [
 			{
@@ -37,7 +37,7 @@ const routes = [
 		]
 	},
 	{
-		path: '/new',
+		path: 'new',
 		component : Layout,
 		children : [
 			{
