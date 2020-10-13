@@ -26,7 +26,7 @@ const routes = [
 		component : () => import('@/views/Game')
 	},
 	{
-		path: '/Game/best',
+		path: '/best',
 		component : Layout,
 		children : [
 			{
@@ -37,7 +37,7 @@ const routes = [
 		]
 	},
 	{
-		path: 'new',
+		path: '/new',
 		component : Layout,
 		children : [
 			{
@@ -61,6 +61,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+	mode: 'history',
+	base : 'Game',
 	routes
 })
 
