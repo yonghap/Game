@@ -9,6 +9,9 @@
 					{{ intro.metacritic }}
 				</div>
 				<div class="intro__btn">
+					<router-link to="/best">인기제품</router-link>
+					<router-link to="./new">신규출시</router-link>
+					<router-link to="/evaluate">평가게임</router-link>
 					<router-link class="btn" to="best">
 						<span class="btn__text">MORE</span>
 					</router-link>
