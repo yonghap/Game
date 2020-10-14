@@ -1,10 +1,14 @@
 # Game
 
-프로젝트 주소 : [Game](https://yonghap.github.io/Game)
+프로젝트 : <a href="https://yonghap.github.io/Game" target="_blank">Game</a>
+
+<br>
 
 ## 프로젝트 소개
 
 rawg 게임 정보 사이트를 활용한 게임 평점 토이 프로젝트입니다.
+
+<br>
 
 ## 프로젝트 화면
 
@@ -15,6 +19,8 @@ rawg 게임 정보 사이트를 활용한 게임 평점 토이 프로젝트입�
 |           평가하기            |            게임상세            |
 | :---------------------------: | :--------------------------: |
 | <img src="https://user-images.githubusercontent.com/7742074/96014566-7d425000-0e81-11eb-89f9-b0e2d83772c3.jpg"> | <img src="https://user-images.githubusercontent.com/7742074/96014567-7ddae680-0e81-11eb-8c5a-cde56a7f34cb.jpg"> |
+
+<br>
 
 ## 프로젝트 기술
 
@@ -29,3 +35,10 @@ VueJS, Vue-Router, Vuex, SCSS
 ### Data
 
 [RAWG](https://rawg.io/), LocalStorage
+
+<br>
+
+## 프로젝트 구성
+
+* View : Main, Search, Detail
+* Components : Loading, Rating, Tag, Sidebar
