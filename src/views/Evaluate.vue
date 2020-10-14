@@ -7,7 +7,7 @@
 						<h2 class="article__title">
 							{{ title }}
 						</h2>
-						<ul class="list">
+						<ul class="list" v-if="games.length > 0">
 							<li
 									v-for="(item, index) in games"
 									v-bind:key="item.id"
@@ -29,6 +29,9 @@
 								<Stars v-bind:game="item" v-bind:star="getRating(item.id)"></Stars>
 							</li>
 						</ul>
+						<div v-else class="list--no">
+							평가한 게임이 없습니다.
+						</div>
 					</article>
 				</section>
 			</div>
@@ -51,7 +54,7 @@
 			return {
 				games: [],
 				cropText: 'crop/600/400',
-				ratings: localStorage,
+				ls: localStorage,
 				getItems : getItems
 			}
 		},
@@ -68,9 +71,9 @@
 		methods: {
 			getRating(id) {
 				if (typeof id == 'number') {
-					for (var prop in this.ratings) {
+					for (var prop in this.ls) {
 						if (id == prop) {
-							return parseInt(JSON.parse(this.ratings[prop]).stars);
+							return parseInt(JSON.parse(this.ls[prop]).stars);
 						}
 					}
 					return 0;
@@ -78,10 +81,11 @@
 			},
 			getList() {
 				this.$store.state.app.gameList.length = 0;
-				for (var item in this.ratings) {
+				for (var item in this.ls) {
 					try {
-						if (typeof JSON.parse(this.ratings[item]) == 'object') {
-							this.games.push(JSON.parse(this.ratings[item]));
+						console.log(this.ls[item]);
+						if (typeof JSON.parse(this.ls[item]) == 'object') {
+							this.games.push(JSON.parse(this.ls[item]));
 						}
 					} catch (e) {
 						return false;

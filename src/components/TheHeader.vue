@@ -2,7 +2,7 @@
 	<header id="header" class="header">
 		<div class="header__row">
 			<h1 class="logo">
-				<a href="/">
+				<a href="/Game">
 					<img src="@/assets/images/logo.png" alt="Gameb">
 				</a>
 			</h1>
@@ -48,6 +48,27 @@
 		}
 		.router-link-active {
 			color:$highlightColor;
+		}
+	}
+	@media screen and (max-width:1024px) {
+		.header__row {
+			padding:20px;
+		}
+		.logo {
+			height:40px;
+			a {
+				line-height:0;
+				img {
+					height:36px;
+				}
+			}
+		}
+		.nav {
+			height:auto;
+			line-height:36px;
+			a {
+				margin-left:10px;
+			}
 		}
 	}
 </style>

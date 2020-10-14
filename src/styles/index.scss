@@ -4,6 +4,7 @@
 * {
 	margin:0;
 	padding:0;
+	vertical-align:top;
 }
 body {
 	overflow-x:hidden;
@@ -96,7 +97,7 @@ button {
 	li {
 		flex-basis:25%;
 		flex-shrink:1;
-		padding:0 12px 40px 12px;
+		padding:0 12px 50px 12px;
 		box-sizing:border-box;
 		text-align:right;
 		span {
@@ -131,19 +132,33 @@ button {
 		padding:20px 0 5px 0;
 		font-size:1.2rem;
 		color:$textColor;
-		word-break:break-all;
+		word-break:break-word;
 	}
 	&__info {
 		position:absolute;
 		bottom:0;
 		right:0;
 		width:100%;
-		padding:10px;
+		padding:8px;
 		background:rgba(0,0,0,.8);
 		box-sizing:border-box;
 		opacity:0;
 		@include transition;
 	}
+	&__meta {
+		width:32px;
+		height:32px;
+		border-radius:3px;
+		background:#6c3;
+		color:#eee;
+		line-height:34px;
+		text-align:center;
+	}
+}
+.list--no {
+	padding:20px 10px;
+	text-align:center;
+	color:#ccc;
 }
 .more {
 	margin-top:30px;
@@ -188,15 +203,15 @@ button {
 .btn {
 	display:inline-block;
 	position:relative;
-	min-width:152px;
-	height:52px;
-	padding:0 32px;
+	min-width:132px;
+	height:42px;
+	padding:0 28px;
 	border:none;
 	background:transparent;
-	font-size:1rem;
+	font-size:.8rem;
 	font-weight:600;
 	color:#fff;
-	line-height:54px;
+	line-height:44px;
 	letter-spacing:.12rem;
 	box-sizing:border-box;
 	outline:none;
@@ -229,4 +244,25 @@ button {
 	background:rgba(103, 193, 245, .2);
 	font-size:.9rem;
 	color:$highlightColor;
+}
+@media screen and (max-width:1024px) {
+	.inner {
+		padding:20px;
+	}
+	.box__wrap {
+		padding:20px;
+	}
+	.list {
+		li {
+			flex-basis:50%;
+			padding:0 6px 34px 6px;
+		}
+		&__title {
+			padding:12px 0 5px 0;
+			font-size:1rem;
+		}
+	}
+	.more {
+		margin-top:10px;
+	}
 }

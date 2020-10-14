@@ -72,4 +72,9 @@
 			}
 		}
 	}
+	@media screen and (max-width:1024px) {
+		.rating__item {
+			font-size:1.2rem;
+		}
+	}
 </style>

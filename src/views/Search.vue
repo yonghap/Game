@@ -11,9 +11,6 @@
 							<li
 									v-for="(item, index) in games"
 									v-bind:key="item.id"
-									:style="{
-									'transition-delay' : (index * 0.08) + 's'
-								}"
 							>
 								<div class="list__item">
 									<span class="list__image"
@@ -56,7 +53,7 @@
 				cropText: 'crop/600/400',
 				currentPage: 1,
 				ls: localStorage,
-				getItems : getItems
+				getItems: getItems
 			}
 		},
 		computed: {

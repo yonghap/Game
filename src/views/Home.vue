@@ -9,9 +9,6 @@
 					{{ intro.metacritic }}
 				</div>
 				<div class="intro__btn">
-					<router-link to="/best">인기제품</router-link>
-					<router-link to="./new">신규출시</router-link>
-					<router-link to="/evaluate">평가게임</router-link>
 					<router-link class="btn" to="best">
 						<span class="btn__text">MORE</span>
 					</router-link>
@@ -78,4 +75,22 @@
 			margin-top:80px;
 		}
 	}
+	@media screen and (max-width:1024px) {
+		.intro {
+			&__title {
+				padding:0 20px;
+				font-size:2.4rem;
+			}
+			&__metacritic {
+				width:44px;
+				height:44px;
+				font-size:1.2rem;
+				line-height:46px;
+			}
+			&__btn {
+				margin-top:40px;
+			}
+		}
+	}
+
 </style>
