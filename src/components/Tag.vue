@@ -33,4 +33,13 @@
 			color:#67C1F5;
 		}
 	}
+	@media screen and (max-width:1024px) {
+		.tag {
+			span, a {
+				margin:1px;
+				padding:2px 4px 1px 4px;
+				font-size:.8rem;
+			}
+		}
+	}
 </style>

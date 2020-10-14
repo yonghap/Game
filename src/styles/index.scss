@@ -203,15 +203,15 @@ button {
 .btn {
 	display:inline-block;
 	position:relative;
-	min-width:132px;
-	height:42px;
+	min-width:152px;
+	height:52px;
 	padding:0 28px;
 	border:none;
 	background:transparent;
-	font-size:.8rem;
+	font-size:1rem;
 	font-weight:600;
 	color:#fff;
-	line-height:44px;
+	line-height:54px;
 	letter-spacing:.12rem;
 	box-sizing:border-box;
 	outline:none;
@@ -246,6 +246,12 @@ button {
 	color:$highlightColor;
 }
 @media screen and (max-width:1024px) {
+	.btn {
+		min-width:142px;
+		height:42px;
+		line-height:44px;
+		font-size:.8rem;
+	}
 	.inner {
 		padding:20px;
 	}
@@ -260,6 +266,9 @@ button {
 		&__title {
 			padding:12px 0 5px 0;
 			font-size:1rem;
+		}
+		&__info {
+			padding:3px 4px;
 		}
 	}
 	.more {
