@@ -3,7 +3,6 @@ node_modules
 public/
 /dist
 public/
-.gitignore
 
 
 # local env files
