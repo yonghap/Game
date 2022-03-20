@@ -1,3 +1,5 @@
+**API 변경으로 현재 동작하지 않고 있습니다.**
+
 # Game
 
 프로젝트 : <a href="https://yonghap.github.io/Game" target="_blank">Game</a>
